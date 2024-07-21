@@ -1,0 +1,43 @@
+.mainHeadingSidebar {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.5px;
+    letter-spacing: -0.27px;
+    text-align: left;
+}
+
+.sidebar {
+    width: 20vw;
+    height: 900px;
+    padding: 16px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: space-between;
+    opacity: 1;
+    /* Corrected the opacity value */
+    padding: 10px;
+}
+
+.upperSectionSide {
+    width: 20vw;
+    height: 302px;
+    gap: 16px;
+    opacity: 1;
+}
+
+.innerSection {
+    height: 184px;
+    gap: 8px;
+    opacity: 1;
+}
+
+.elementInUpper {
+    width: 20vw;
+    height: 40px;
+    padding: 8px 12px;
+    gap: 12px;
+    display: flex;
+    border-radius: 5px;
+    cursor: pointer;
+}
