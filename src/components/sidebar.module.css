@@ -41,3 +41,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.elementInUpper:hover {
+    background-color: #F2E8F2;
+}
