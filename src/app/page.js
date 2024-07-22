@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex">
       <Sidebar />
-      <div className="container pl-2 py-5">
+      <div className="container px-5 py-5">
         <div className="heading font-[700] text-[22px]">
           Quick Start
         </div>

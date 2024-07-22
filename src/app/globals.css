@@ -22,12 +22,14 @@
   
   .container {
     width: 100vw !important;
+    padding: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .container {
     width: 100vw !important;
+    /* padding: 30px; */
   }
   .cardContainer {
     /* width: 60vw !important; */

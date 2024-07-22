@@ -5,9 +5,12 @@
     letter-spacing: -0.27px;
     text-align: left;
 }
+.showsidebar {
+    display: none;
+}
 
 .sidebar {
-    width: 25vw;
+    width: 23vw;
     height: 1020px;
     padding: 16px 0 0 0;
     display: flex;
@@ -105,7 +108,7 @@
 
 @media only screen and (max-width: 768px) {
     .showsidebar {
-        display: block;
+        display: block !important;
     }
     .sidebar {
         /* display: none; */
