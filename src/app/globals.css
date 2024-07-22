@@ -11,7 +11,25 @@
 .cardContainer {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .button:hover {
   background: #F2E8F2;
+}
+
+@media only screen and (min-width: 600px) {
+  
+  .container {
+    width: 100vw !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100vw !important;
+  }
+  .cardContainer {
+    /* width: 60vw !important; */
+  }
 }

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Card = ({heading, image, content}) => {
     return (
-        <div className='w-[288.33px] h-[231.9]'>
+        <div className=' w-[288.33px] h-[231.9px]'>
             <Image src={image} width={288.33} height={162.17} className='rounded-xl' />
             <div className="cardHeading font-[500] text-[16px]">
                 {heading}

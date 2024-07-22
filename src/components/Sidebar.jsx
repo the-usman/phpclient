@@ -1,61 +1,73 @@
-import React from 'react'
-import sidebarcss from './sidebar.module.css'
-import Image from 'next/image'
+"use client";
+
+import React from 'react';
+import sidebarcss from './sidebar.module.css';
+import Image from 'next/image';
+import { FaBars } from 'react-icons/fa';
 
 const Sidebar = () => {
+    const showSidebar = () => {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle(sidebarcss.show);
+    };
+
     return (
-        <div className={sidebarcss.sidebar}>
-            <div className={sidebarcss.upperSectionSide}>
-                <h1 className={sidebarcss.mainHeadingSidebar}>
-                    AI Website Builder
-                </h1>
-                <div className={sidebarcss.innerSection}>
-                    <div className={`active mt-2 ${sidebarcss.elementInUpper}`}>
-                        <Image src="/pause.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Pause icon" />
-                        Dashboard
+        <>
+            <div className={sidebarcss.showsidebar} onClick={showSidebar}>
+                <FaBars />
+            </div>
+            <div className={sidebarcss.abSidebar}>
+                <div className={`${sidebarcss.sidebar}`} id='sidebar'>
+                    <div className={sidebarcss.upperSectionSide}>
+                        <h1 className={sidebarcss.mainHeadingSidebar}>
+                            AI Website Builder
+                        </h1>
+                        <div className={sidebarcss.innerSection}>
+                            <div className={`active mt-2 ${sidebarcss.elementInUpper}`}>
+                                <Image src="/pause.svg" width={24} height={24} alt="Pause icon" />
+                                Dashboard
+                            </div>
+                            <div className={sidebarcss.elementInUpper}>
+                                <Image src="/side.svg" width={24} height={24} alt="Site icon" />
+                                Site
+                            </div>
+                            <div className={sidebarcss.elementInUpper}>
+                                <Image src="/teams.svg" width={24} height={24} alt="Teams icon" />
+                                Teams
+                            </div>
+                            <div className={sidebarcss.elementInUpper}>
+                                <Image src="/upgrade.svg" width={24} height={24} alt="Upgrade icon" />
+                                Upgrades
+                            </div>
+                        </div>
                     </div>
-                    <div className={sidebarcss.elementInUpper}>
-                        <Image src="/side.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Site icon" />
-                        Site
-                    </div>
-                    <div className={sidebarcss.elementInUpper}>
-                        <Image src="/teams.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Teams icon" />
-                        Teams
-                    </div>
-                    <div className={sidebarcss.elementInUpper}>
-                        <Image src="/upgrade.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Upgrade icon" />
-                        Upgrades
+                    <div className={sidebarcss.downSection}>
+                        <button className={sidebarcss.createButton}>
+                            Create new site
+                        </button>
+                        <div className={sidebarcss.innerSection}>
+                            <div className={`mt-2 ${sidebarcss.elementInUpper}`}>
+                                <Image src="/docs.svg" width={24} height={24} alt="Docs icon" />
+                                Docs
+                            </div>
+                            <div className={sidebarcss.elementInUpper}>
+                                <Image src="/tutorial.svg" width={24} height={24} alt="Tutorials icon" />
+                                Tutorials
+                            </div>
+                            <div className={sidebarcss.elementInUpper}>
+                                <Image src="/help.svg" width={24} height={24} alt="Help icon" />
+                                Help & feedback
+                            </div>
+                            <div className={sidebarcss.elementInUpper}>
+                                <Image src="/api.svg" width={24} height={24} alt="API icon" />
+                                API reference
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </>
+    );
+};
 
-            <div className="downSection w-full">
-                <button className="bg-[#9612A3] w-full h-[40px] text-white rounded-xl">
-                    Create new site
-                </button>
-                <div className={sidebarcss.innerSection}>
-                    <div className={`mt-2 ${sidebarcss.elementInUpper}`}>
-                        <Image src="/docs.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Pause icon" />
-                        Docs
-                    </div>
-                    <div className={sidebarcss.elementInUpper}>
-                        <Image src="/toturial.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Site icon" />
-                        Tutorials
-                    </div>
-                    <div className={sidebarcss.elementInUpper}>
-                        <Image src="/help.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Teams icon" />
-                        Help & feedback
-                    </div>
-                    <div className={sidebarcss.elementInUpper}>
-                        <Image src="/api.svg" width={24} height={24} style={{ paddingRight: 0 }} alt="Upgrade icon" />
-                        API reference
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    )
-}
-
-export default Sidebar
-
+export default Sidebar;
