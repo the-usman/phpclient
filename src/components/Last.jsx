@@ -4,7 +4,7 @@ import React from 'react'
 
 const Last = () => {
     return (
-        <div className=''>
+        <div className='mt-5'>
             <div className="heading font-[700] text-[22px]">
                 Recent Activity
             </div>

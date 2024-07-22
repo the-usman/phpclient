@@ -1,23 +1,33 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import sidebarcss from './sidebar.module.css';
 import Image from 'next/image';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Sidebar = () => {
+    const [show, setShow] = useState(false);
+
     const showSidebar = () => {
         const sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle(sidebarcss.show);
+        if (sidebar.classList.contains(sidebarcss.show)) {
+            sidebar.classList.remove(sidebarcss.show);
+            sidebar.classList.add(sidebarcss.hide);
+            setShow(false);
+        } else {
+            sidebar.classList.remove(sidebarcss.hide);
+            sidebar.classList.add(sidebarcss.show);
+            setShow(true);
+        }
     };
 
     return (
         <>
             <div className={sidebarcss.showsidebar} onClick={showSidebar}>
-                <FaBars />
+                {show ? <FaTimes /> : <FaBars />}
             </div>
             <div className={sidebarcss.abSidebar}>
-                <div className={`${sidebarcss.sidebar}`} id='sidebar'>
+                <div className={`${sidebarcss.sidebar} ${sidebarcss.hide}`} id="sidebar">
                     <div className={sidebarcss.upperSectionSide}>
                         <h1 className={sidebarcss.mainHeadingSidebar}>
                             AI Website Builder
@@ -45,7 +55,7 @@ const Sidebar = () => {
                         <button className={sidebarcss.createButton}>
                             Create new site
                         </button>
-                        <div className={sidebarcss.innerSection}>
+                        <div className={`mt-5 ${sidebarcss.innerSection}`}>
                             <div className={`mt-2 ${sidebarcss.elementInUpper}`}>
                                 <Image src="/docs.svg" width={24} height={24} alt="Docs icon" />
                                 Docs
