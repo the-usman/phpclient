@@ -7,7 +7,7 @@ import Last from "@/components/Last";
 import Sidebar from "@/components/Sidebar";
 import Pagination from "@/components/Pagination";
 
-const page = () => {
+const DashboardPage = () => {
     const items = [
         { image: '/image1.png', heading: 'Personal Portfolio', content: 'Created 6 days ago' },
         { image: '/image2.png', heading: 'Personal Portfolio', content: 'Created 6 days ago' },
@@ -32,7 +32,7 @@ const page = () => {
 
     const currentItems = items.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
     return (
-        <div className='flex'>
+        <div className="flex">
             <Sidebar />
             <div className="container px-5 py-5">
                 <div className="heading font-[700] text-[22px]">
@@ -54,7 +54,7 @@ const page = () => {
                 <Last />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default page
+export default DashboardPage;
