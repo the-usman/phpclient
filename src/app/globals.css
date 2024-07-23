@@ -71,7 +71,7 @@ body {
   top: 0;
   left: 0;
   position: sticky;
-  z-index: 100000000000000000000000000000000000;
+  z-index: 999999999999;
   background-color: #000;
 }
 

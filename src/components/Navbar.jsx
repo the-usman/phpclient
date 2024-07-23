@@ -27,7 +27,7 @@ const Navbar = () => {
         },
     ];
     return (
-        <div className='navbar h-[100px] flex justify-center items-center px-10'>
+        <div className='navbar h-[100px] flex justify-center items-center px-10 bg-black' style={{zIndex: 99999999}} >
             {/* <FloatingNav navItems={navItems} /> */}
 
             <div className="flex justify-between w-full">
