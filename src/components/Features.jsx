@@ -304,7 +304,7 @@ const Features = () => {
                 </div>
             </div>
             <div className="imageSlider flex flex-col mt-24 justify-center items-center">
-                <motion.div className="warper  absolute rounded-full " style={{ zIndex: '100000000', backgroundColor: 'rgba(255,255,255,0.3)' }} whileHover={{ rotate: 60 }}>
+                <motion.div className="warper  absolute rounded-full " style={{ zIndex: '10', backgroundColor: 'rgba(255,255,255,0.3)' }} whileHover={{ rotate: 60 }}>
 
                     <Image src={'https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/reload.png'} width={150} height={150} className=' p-5 image-arrow bg-[rgba(150, 18, 163, 0.5)] cursor-pointer' ref={ref} onClick={handleClick} />
                 </motion.div>
