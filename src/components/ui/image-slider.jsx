@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const ImagesSlider = ({
     images,
@@ -11,7 +11,7 @@ export const ImagesSlider = ({
     className,
     autoplay = true,
     direction = "up",
-    ref
+    
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -30,24 +30,7 @@ export const ImagesSlider = ({
     };
 
 
-
-const handleReferenceClick = useCallback(() => {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    setCurrentIndex(randomIndex);
-}, [images.length]);
-
-useEffect(() => {
-    const currentRef = ref?.current;
-    if (currentRef) {
-        currentRef.addEventListener('click', handleReferenceClick);
-    }
-
-    return () => {
-        if (currentRef) {
-            currentRef.removeEventListener('click', handleReferenceClick);
-        }
-    };
-}, [ref, handleReferenceClick]);
+    
 
     useEffect(() => {
         loadImages();
