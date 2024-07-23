@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState, forwardRef, useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
-export const ImagesSlider = forwardRef(({
+export const ImagesSlider = ({
     images,
     children,
     overlay = true,
@@ -11,46 +11,49 @@ export const ImagesSlider = forwardRef(({
     className,
     autoplay = true,
     direction = "up",
-}, ref) => {
+    ref
+}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(false);
-    const [loadedImages, setLoadedImages] = useState([]);
+    const [loadedImages, setLoadedImages] = useState ([]);
 
-    const handleNext = useCallback(() => {
+    const handleNext = () => {
         setCurrentIndex((prevIndex) =>
             prevIndex + 1 === images.length ? 0 : prevIndex + 1
         );
-    }, [images.length]);
+    };
 
-    const handlePrevious = useCallback(() => {
+    const handlePrevious = () => {
         setCurrentIndex((prevIndex) =>
             prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
         );
-    }, [images.length]);
+    };
 
-    const handleReferenceClick = useCallback(() => {
-        const randomIndex = Math.floor(Math.random() * images.length);
-        setCurrentIndex(randomIndex);
-    }, [images.length]);
 
-    useEffect(() => {
-        const currentRef = ref && ref.current;
+
+const handleReferenceClick = useCallback(() => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    setCurrentIndex(randomIndex);
+}, [images.length]);
+
+useEffect(() => {
+    const currentRef = ref?.current;
+    if (currentRef) {
+        currentRef.addEventListener('click', handleReferenceClick);
+    }
+
+    return () => {
         if (currentRef) {
-            currentRef.addEventListener('click', handleReferenceClick);
+            currentRef.removeEventListener('click', handleReferenceClick);
         }
-
-        return () => {
-            if (currentRef) {
-                currentRef.removeEventListener('click', handleReferenceClick);
-            }
-        };
-    }, [ref, handleReferenceClick]);
+    };
+}, [ref, handleReferenceClick]);
 
     useEffect(() => {
         loadImages();
-    }, [loadImages]);
+    }, []);
 
-    const loadImages = useCallback(() => {
+    const loadImages = () => {
         setLoading(true);
         const loadPromises = images.map((image) => {
             return new Promise((resolve, reject) => {
@@ -67,9 +70,19 @@ export const ImagesSlider = forwardRef(({
                 setLoading(false);
             })
             .catch((error) => console.error("Failed to load images", error));
-    }, [images]);
-
+    };
     useEffect(() => {
+        const handleKeyDown = (event) => {
+            // if (event.key === "ArrowRight") {
+            //     handleNext();
+            // } else if (event.key === "ArrowLeft") {
+            //     handlePrevious();
+            // }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        // autoplay
         let interval;
         if (autoplay) {
             interval = setInterval(() => {
@@ -78,9 +91,10 @@ export const ImagesSlider = forwardRef(({
         }
 
         return () => {
-            if (interval) clearInterval(interval);
+            window.removeEventListener("keydown", handleKeyDown);
+            clearInterval(interval);
         };
-    }, [autoplay, handleNext]);
+    }, []);
 
     const slideVariants = {
         initial: {
@@ -121,7 +135,9 @@ export const ImagesSlider = forwardRef(({
                 "overflow-hidden h-full w-full relative flex items-center justify-center",
                 className
             )}
-            style={{ boxShadow: "0px 1px 15px rgba(255, 255, 255, 0.3)", perspective: "1000px" }}
+            style={{
+                perspective: "1000px",
+            }}
         >
             {areImagesLoaded && children}
             {areImagesLoaded && overlay && (
@@ -145,6 +161,4 @@ export const ImagesSlider = forwardRef(({
             )}
         </div>
     );
-});
-
-ImagesSlider.displayName = "ImagesSlider";
+};

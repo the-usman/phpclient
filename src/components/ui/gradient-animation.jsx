@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-    gradientBackgroundStart = "rgb(0, 0, 0)", // Dark theme start
+    gradientBackgroundStart = "rgb(30, 30, 30)", // Dark theme start
     gradientBackgroundEnd = "rgb(0, 0, 0)", // Dark theme end
     firstColor = "150, 18, 163", // Variant of 9612A3
     secondColor = "30, 144, 255", // Sky-500
@@ -12,7 +12,7 @@ export const BackgroundGradientAnimation = ({
     fifthColor = "60, 120, 200", // Another variant
     pointerColor = "180, 60, 200", // Another variant
     size = "80%",
-    blendingValue = "dim-light",
+    blendingValue = "hard-light",
     children,
     className,
     interactive = true,
@@ -67,17 +67,17 @@ export const BackgroundGradientAnimation = ({
     return (
         <div
             className={cn(
-                "h-[80vh] w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+                "h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
                 containerClassName
             )}
         >
             <svg className="hidden">
                 <defs>
-                    {/* <filter id="blurMe">
+                    <filter id="blurMe">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                         <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
                         <feBlend in="SourceGraphic" in2="goo" />
-                    </filter> */}
+                    </filter>
                 </defs>
             </svg>
             <div className={cn("", className)}>{children}</div>
@@ -95,8 +95,8 @@ export const BackgroundGradientAnimation = ({
                         `animate-first`,
                         `opacity-100`
                     )}
-                ></div> */}
-                {/* <div
+                ></div>
+                <div
                     className={cn(
                         `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat]`,
                         `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
@@ -104,8 +104,8 @@ export const BackgroundGradientAnimation = ({
                         `animate-second`,
                         `opacity-100`
                     )}
-                ></div> */}
-                {/* <div
+                ></div>
+                <div
                     className={cn(
                         `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
                         `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
@@ -113,8 +113,8 @@ export const BackgroundGradientAnimation = ({
                         `animate-third`,
                         `opacity-100`
                     )}
-                ></div> */}
-                {/* <div
+                ></div>
+                <div
                     className={cn(
                         `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
                         `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
@@ -122,8 +122,8 @@ export const BackgroundGradientAnimation = ({
                         `animate-fourth`,
                         `opacity-70`
                     )}
-                ></div> */}
-                {/* <div
+                ></div>
+                <div
                     className={cn(
                         `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fifth-color),_0.8)_0,_rgba(var(--fifth-color),_0)_50%)_no-repeat]`,
                         `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
