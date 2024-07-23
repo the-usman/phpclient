@@ -70,17 +70,6 @@ export const ImagesSlider = forwardRef(({
     }, [images]);
 
     useEffect(() => {
-        // const handleKeyDown = (event) => {
-        //     if (event.key === "ArrowRight") {
-        //         handleNext();
-        //     } else if (event.key === "ArrowLeft") {
-        //         handlePrevious();
-        //     }
-        // };
-
-        // window.addEventListener("keydown", handleKeyDown);
-
-        // autoplay
         let interval;
         if (autoplay) {
             interval = setInterval(() => {
@@ -89,7 +78,6 @@ export const ImagesSlider = forwardRef(({
         }
 
         return () => {
-            // window.removeEventListener("keydown", handleKeyDown);
             if (interval) clearInterval(interval);
         };
     }, [autoplay, handleNext]);
@@ -160,5 +148,3 @@ export const ImagesSlider = forwardRef(({
 });
 
 ImagesSlider.displayName = "ImagesSlider";
-
-
