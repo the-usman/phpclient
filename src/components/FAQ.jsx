@@ -4,7 +4,7 @@ import { Button } from './ui/MovingBorder'
 
 const FAQ = () => {
     return (
-        <div>
+        <div className='flex flex-col justify-center items-center mt-20'>
             <div className="keyFeatures w-full flex flex-col justify-center items-center">
                 <div className="text-[#9612A3] font-[700] text-4xl w-full text-center">
                     AI Roadmap
@@ -26,7 +26,7 @@ const FAQ = () => {
                     </Button>
                 </div>
             </div>
-            <div className='w-[600px]'>
+            <div className='w-[800px] mt-20 text-xl'>
                 <Accordion />
             </div>
         </div>

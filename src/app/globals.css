@@ -84,3 +84,22 @@ body {
 .hiddenVideo {
   display: none;
 }
+
+.word-strip-container {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.word-strip {
+  display: flex;
+  align-items: center;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 1em;
+}

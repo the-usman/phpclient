@@ -2,6 +2,7 @@
 
 import FAQ from "@/components/FAQ";
 import Features from "@/components/Features";
+import Footor from "@/components/Footor";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Roadmap from "@/components/Roadmap";
@@ -18,6 +19,7 @@ export default function Home() {
       <Features />
       <Roadmap />
       <FAQ />
+      <Footor />
     </main>
   );
 }
