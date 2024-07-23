@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState, forwardRef } from "react";
+import React, { useEffect, useState, forwardRef, useCallback } from "react";
 
 export const ImagesSlider = forwardRef(({
     images,
@@ -16,40 +16,41 @@ export const ImagesSlider = forwardRef(({
     const [loading, setLoading] = useState(false);
     const [loadedImages, setLoadedImages] = useState([]);
 
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         setCurrentIndex((prevIndex) =>
             prevIndex + 1 === images.length ? 0 : prevIndex + 1
         );
-    };
+    }, [images.length]);
 
-    const handlePrevious = () => {
+    const handlePrevious = useCallback(() => {
         setCurrentIndex((prevIndex) =>
             prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
         );
-    };
+    }, [images.length]);
 
-    const handleReferenceClick = () => {
+    const handleReferenceClick = useCallback(() => {
         const randomIndex = Math.floor(Math.random() * images.length);
         setCurrentIndex(randomIndex);
-    };
+    }, [images.length]);
 
     useEffect(() => {
-        if (ref && ref.current) {
-            ref.current.addEventListener('click', handleReferenceClick);
+        const currentRef = ref && ref.current;
+        if (currentRef) {
+            currentRef.addEventListener('click', handleReferenceClick);
         }
 
         return () => {
-            if (ref && ref.current) {
-                ref.current.removeEventListener('click', handleReferenceClick);
+            if (currentRef) {
+                currentRef.removeEventListener('click', handleReferenceClick);
             }
-        }
-    }, [ref]);
+        };
+    }, [ref, handleReferenceClick]);
 
     useEffect(() => {
         loadImages();
-    }, []);
+    }, [loadImages]);
 
-    const loadImages = () => {
+    const loadImages = useCallback(() => {
         setLoading(true);
         const loadPromises = images.map((image) => {
             return new Promise((resolve, reject) => {
@@ -66,16 +67,16 @@ export const ImagesSlider = forwardRef(({
                 setLoading(false);
             })
             .catch((error) => console.error("Failed to load images", error));
-    };
+    }, [images]);
 
     useEffect(() => {
-        const handleKeyDown = (event) => {
-            // if (event.key === "ArrowRight") {
-            //     handleNext();
-            // } else if (event.key === "ArrowLeft") {
-            //     handlePrevious();
-            // }
-        };
+        // const handleKeyDown = (event) => {
+        //     if (event.key === "ArrowRight") {
+        //         handleNext();
+        //     } else if (event.key === "ArrowLeft") {
+        //         handlePrevious();
+        //     }
+        // };
 
         // window.addEventListener("keydown", handleKeyDown);
 
@@ -89,9 +90,9 @@ export const ImagesSlider = forwardRef(({
 
         return () => {
             // window.removeEventListener("keydown", handleKeyDown);
-            // clearInterval(interval);
+            if (interval) clearInterval(interval);
         };
-    }, [autoplay]);
+    }, [autoplay, handleNext]);
 
     const slideVariants = {
         initial: {
@@ -133,7 +134,6 @@ export const ImagesSlider = forwardRef(({
                 className
             )}
             style={{ boxShadow: "0px 1px 15px rgba(255, 255, 255, 0.3)", perspective: "1000px" }}
-
         >
             {areImagesLoaded && children}
             {areImagesLoaded && overlay && (
@@ -158,3 +158,7 @@ export const ImagesSlider = forwardRef(({
         </div>
     );
 });
+
+ImagesSlider.displayName = "ImagesSlider";
+
+

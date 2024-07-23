@@ -48,6 +48,7 @@ export const FloatingNav = ({ navItems, className }) => {
                 )}
             >
                 {navItems.map((navItem, idx) => (
+                    
                     <Link
                         key={`link=${idx}`}
                         href={navItem.link}
