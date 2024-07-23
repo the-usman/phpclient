@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-    gradientBackgroundStart = "rgb(30, 30, 30)", // Dark theme start
+    gradientBackgroundStart = "rgb(0, 0, 0)", // Dark theme start
     gradientBackgroundEnd = "rgb(0, 0, 0)", // Dark theme end
     firstColor = "150, 18, 163", // Variant of 9612A3
     secondColor = "30, 144, 255", // Sky-500
