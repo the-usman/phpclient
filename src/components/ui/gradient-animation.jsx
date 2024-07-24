@@ -70,6 +70,7 @@ export const BackgroundGradientAnimation = ({
                 "h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
                 containerClassName
             )}
+            style={{zIndex: 999999}}
         >
             <svg className="hidden">
                 <defs>
@@ -86,6 +87,7 @@ export const BackgroundGradientAnimation = ({
                     "gradients-container h-full w-full blur-lg",
                     isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
                 )}
+                style={{zIndex: 999999}}
             >
                 {/* <div
                     className={cn(
@@ -142,6 +144,7 @@ export const BackgroundGradientAnimation = ({
                             `[mix-blend-mode:var(--blending-value)] w-full h-full -top-1/2 -left-1/2`,
                             `opacity-70`
                         )}
+                        style={{zIndex: 999999}}
                     ></div>
                 )}
             </div>

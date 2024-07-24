@@ -1,27 +1,108 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import WordStrip from './ui/WordStrip';
 import { BackgroundGradientAnimation } from './ui/gradient-animation';
 
-const About = () => {
+const Footor = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseMove = (e) => {
+        const { clientX, clientY, currentTarget } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const x = ((clientX - left) / width - 0.5) * 2;
+        const y = ((clientY - top) / height - 0.5) * 2;
+        setMousePosition({ x, y });
+    };
+
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        setMousePosition({ x: 0, y: 0 });
+    };
+
     return (
-        <div className="flex flex-col justify-center items-center mt-24 ">
-            <BackgroundGradientAnimation className="flex flex-col justify-center items-center">
+        <div className="relative flex flex-col justify-center items-center mt-24">
+            <BackgroundGradientAnimation className="flex flex-col justify-center items-center relative z-10">
                 <div className="lg:text-6xl md:text-5xl font-[600] text-white lg:w-[700px] md:w-[500px] w-[90vw] text-[9vw] text-center">
                     DoraAi Footer page is following
                 </div>
                 <div className="w-[800px]">
                     <WordStrip words={['usman   ', 'javed   ', 'ali    ', 'shahg   ', 'usman   ', 'javed   ', 'shahg    ', 'ali', 'ahmad    ', 'Explore    ', 'Innovate     ', 'Create    ', 'Inspire    ', 'Achieve    ']} />
                 </div>
-                <div className="button1 mt-20">
-                    <button
-                        className="border-neutral-500 dark:border-slate-800    bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700 hover:from-sky-700 hover:via-[#9612A3] hover:to-[#9612A3] lg:p-10 p-5 lg:text-4xl text-3xl rounded-full lg:w-[500px] md:w-[400px] w-[80vw]"
+                <motion.div 
+                    className="button1 mt-20 relative"
+                    onMouseMove={handleMouseMove}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{ perspective: 1000 }}
+                >
+                    <motion.button
+                        className="relative border-neutral-500 dark:border-slate-800 bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700 hover:from-sky-700 hover:via-[#9612A3] hover:to-[#9612A3] lg:p-10 p-5 lg:text-4xl text-3xl rounded-full lg:w-[500px] md:w-[400px] w-[80vw]"
+                        style={{
+                            transform: `rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`
+                        }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
+                        {isHovered && (
+                            <motion.div
+                                className="absolute inset-0"
+                                style={{
+                                    background: `radial-gradient(circle at ${(mousePosition.x + 0.5) * 50}% ${(mousePosition.y + 0.5) * 50}%, rgba(150, 18, 163, 0.2), rgba(96, 170, 255, 0.2), rgba(255, 255, 255, 0.1))`
+                                }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            />
+                        )}
                         Get Started
-                    </button>
-                </div>
+                    </motion.button>
+                </motion.div>
+                <footer className="footer w-[100vw] text-base-content p-10 min-h-[80vh] bg-transparent">
+                    <aside>
+                        <svg
+                            width="50"
+                            height="50"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            className="fill-current"
+                        >
+                            <path
+                                d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"
+                            ></path>
+                        </svg>
+                        <p className="text-lg">
+                            ACME Industries Ltd.
+                            <br />
+                            Providing reliable tech since 1992
+                        </p>
+                    </aside>
+                    <div>
+                        <nav className="flex flex-col">
+                            <h6 className="footer-title text-white text-2xl">Services</h6>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Branding</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Design</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Marketing</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Advertisement</a>
+                        </nav>
+                        <nav className="flex flex-col">
+                            <h6 className="footer-title text-white text-2xl">Company</h6>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">About us</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Contact</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Jobs</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Press kit</a>
+                        </nav>
+                    </div>
+                    <nav>
+                        <h6 className="footer-title text-white text-2xl">Legal</h6>
+                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Terms of use</a>
+                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Privacy policy</a>
+                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Cookie policy</a>
+                    </nav>
+                </footer>
             </BackgroundGradientAnimation>
         </div>
     );
 };
 
-export default About;
+export default Footor;

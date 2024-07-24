@@ -2,13 +2,14 @@
 
 import FAQ from "@/components/FAQ";
 import Features from "@/components/Features";
-import Footor from "@/components/About";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Roadmap from "@/components/Roadmap";
 import CardSlider from "@/components/ui/Card-slider";
 import React, { useState } from "react";
 import SliderComponent from "@/components/Sliders";
+import About from "@/components/About";
+import Footor from "@/components/Footor";
 
 export default function Home() {
   
@@ -20,6 +21,7 @@ export default function Home() {
       <Features />
       <Roadmap />
       <FAQ />
+      <About />
       <Footor />
       {/* <SliderComponent /> */}
     </main>
