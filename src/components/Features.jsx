@@ -215,7 +215,7 @@ const Features = () => {
                     <div className='video-editor w-full lg:hidden' ref={ref}>
                         <video
                             key={videoIndex}
-                            className='w-[1100px] h-[100vh]'
+                            className='w-[1100px] h-[80vh]'
                             autoPlay
                             muted
                             onEnded={handleVideoEnd}

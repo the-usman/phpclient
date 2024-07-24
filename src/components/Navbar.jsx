@@ -28,13 +28,13 @@ const Navbar = () => {
         },
     ];
     return (
-        <div className='navbar h-[100px] lg:backdrop-blur-0 backdrop-blur-md flex justify-center items-center px-10 ' style={{zIndex: 99999999}} >
+        <div className='navbar h-[100px] flex justify-center items-center px-10 ' style={{zIndex: 99999999}} >
             {/* <FloatingNav navItems={navItems} /> */}
 
             <div className="flex justify-between w-full">
                 <Image src={'/image1.png'} className="logo w-[60px] h-[60px] rounded-full
             " width={20} height={20} />
-                <div className="linkSection hidden lg:flex backdrop-blur-md  border border-gray-500  justify-center items-center rounded-full ">
+                <div className="linkSection hidden lg:flex backdrop-blur-md  border border-gray-500  justify-center items-center rounded-full " >
                     <ul className='flex justify-center items-center h-[50px]'>
                         <li className=' px-5 text-white text-xl flex justify-center items-center'>Home </li>
                         <li className=' px-5 text-white text-xl flex justify-center items-center'>Features </li>
