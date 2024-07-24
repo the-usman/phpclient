@@ -167,7 +167,7 @@ const Features = () => {
 
 
     return (
-        <div id='features bg-transparent'>
+        <div id='features bg-transparent '>
             {/* <div className="do h-[100vh]"></div> */}
             <div className="container1 flex flex-col justify-center items-center bg-transparent">
                 <div className='w-[70%] relative bg-transparent'>
@@ -215,17 +215,17 @@ const Features = () => {
                         )}
                     </div>
 
-                    <div className="text-2xl text-center w-full text-[#9612A3] font-[500] lg:hidden">
+                    <div className="text-2xl text-center lg:w-full md:w-full w-[80vw] text-[#9612A3] font-[500] lg:hidden">
                         AI Pipeline
                     </div>
-                    <div className="text-6xl text-white font-[700] mt-10 lg:hidden">
+                    <div className="lg:text-6xl md:text-5xl text-[9vw] text-white font-[700] mt-10 lg:hidden lg:w-full md:w-full w-[80vw] text-center">
                         Building Sites, <br /> end-to-end.
                     </div>
 
-                    <div className='video-editor w-full lg:hidden' ref={ref}>
+                    <div className='video-editor lg:w-full md:w-full w-[80vw]  lg:hidden' ref={ref}>
                         <video
                             key={videoIndex}
-                            className='w-[1100px] h-[80vh]'
+                            className='w-[1100px] lg:h-[80vh] md:h-[80vh] h-[80vh]'
                             autoPlay
                             muted
                             onEnded={handleVideoEnd}
@@ -287,13 +287,13 @@ const Features = () => {
                 <div className="text-[#9612A3] font-[700] lg:text-4xl text-2xl w-full text-center">
                     Key Features
                 </div>
-                <div className="text-white  lg:text-6xl text-4xl font-[800] lg:w-[800px] w-[600px] text-center mt-10">
+                <div className="text-white  lg:text-6xl md:text-4xl text-[7vw] font-[800] lg:w-[800px] md:w-[600px] w-[100vw] text-center mt-10">
                     The first AI that trulytruly understands websites.
                 </div>
-                <div className="text-gray-500 text-2xl mt-2">
+                <div className="text-gray-500 text-2xl mt-2 lg:w-[800px] md:w-[600px] w-[100vw] text-center">
                     Genrating website using AI on any topic
                 </div>
-                <div className="mt-10 lg:w-[800px] w-[600px]">
+                <div className="mt-10 lg:w-[800px] md:w-[600px] w-[80vw]">
                     <PlaceholdersAndVanishInput
                         placeholders={placeholders}
                         onChange={handleChange}
@@ -337,16 +337,16 @@ const Features = () => {
             <div className="imageSlider flex flex-col mt-24 justify-center items-center">
                 <motion.div className="warper  absolute rounded-full " style={{ zIndex: 1000, backgroundColor: 'rgba(255,255,255,0.3)' }} whileHover={{ rotate: 60 }}>
 
-                    <Image src={'https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/reload.png'} width={150} height={150} className=' p-5 image-arrow bg-[rgba(150, 18, 163, 0.5)] cursor-pointer lg:w-[150px] lg:h-[150px] h-[100px] w-[100px]' ref={ref} onClick={handleClick} />
+                    <Image src={'https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/reload.png'} width={150} height={150} className=' p-5 image-arrow bg-[rgba(150, 18, 163, 0.5)] cursor-pointer lg:w-[150px] md:block lg:block hidden lg:h-[150px] h-[100px] w-[100px]' ref={ref} onClick={handleClick} />
                 </motion.div>
                 <div className='w-[90%] flex justify-between'>
-                    <div className={`slider ${animateSliders ? 'animate' : ''} w-[48%]`}>
-                        <ImagesSlider className="h-[40rem] rounded-xl" images={images} ref={ref}>
+                    <div className={`slider ${animateSliders ? 'animate' : ''} lg:w-[48%] md:w-[48%] w-[90vw]`}>
+                        <ImagesSlider className="lg:h-[40rem] md:h-[40rem] h-[30rem]  rounded-xl lg:w-full md:w-full w-[90vw]" images={images} ref={ref}>
 
                         </ImagesSlider>
                     </div>
                     <div className={`slider ${animateSliders ? 'animate' : ''} w-[48%]`} >
-                        <ImagesSlider className="h-[40rem] rounded-xl" images={images} direction='right' ref={ref}>
+                        <ImagesSlider className="h-[40rem] rounded-xl md:block lg:block hidden" images={images} direction='right' ref={ref}>
                         </ImagesSlider>
                     </div>
                 </div>
@@ -377,8 +377,8 @@ const Features = () => {
             </div>
 
             {/* </div> */}
-            <div className="cards flex flex-wrap justify-center items-center  gap-5 mt-10 ">
-                <div className='flex flex-wrap gap-5 w-[90%] lg:justify-between items-center justify-center'>
+            <div className="cards flex flex-wrap lg:flex-nowrap justify-center items-center  gap-5 mt-10 ">
+                <div className='flex flex-wrap gap-5 w-[90%] lg:w-full lg:justify-between items-center justify-center'>
                     <div className="">
                         <GlareCard>
                             <div className="text-3xl font-[700] text-white">
@@ -394,7 +394,7 @@ const Features = () => {
                                 <div>
                                     <Image src={images[0]} width={300} height={700} className="h-[500px] rounded-2xl mt-10" alt="Main Image" />
                                 </div>
-                                <div className="relative flex flex-wrap w-[300px]">
+                                <div className="relative hidden flex-wrap w-[300px] lg:flex md:flex">
                                     <div className='absolute'>
                                         <Image src="/nike=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
                                     </div>
@@ -422,7 +422,7 @@ const Features = () => {
                         </GlareCard>
 
                     </div>
-                    <div className="container-wrapper p-5 w-[650px] rounded-2xl lg:mt-0 mt-20" >
+                    <div className="container-wrapper p-5 lg:w-[600px] md:w-[700px] w-[90vw] rounded-2xl lg:mt-0 mt-20" >
                         <div className="text-3xl font-[700] text-white">
                             Prompt-relevant, always
                         </div>

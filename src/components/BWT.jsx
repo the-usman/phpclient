@@ -2,7 +2,7 @@ import React from 'react'
 
 const BWT = () => {
     return (
-        <div className='w-full px-5 py-5'>
+        <div className='w-full px-5 py-5 '>
             <div className="heading font-[700] text-[22px] pb-10">AI Tips</div>
             <div className='flex gap-5 flex-wrap'>
             <div className="box bg-[#E3D1E8] lg:p-5 p-2 lg:w-[35vw] w-[90vw] rounded-xl h-[90px] flex items-center justify-between">

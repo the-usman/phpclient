@@ -38,11 +38,11 @@ const HeroSection = () => {
     
     return (
         <div className='h-[100vh] w-[100vw] overflow-hidden flex flex-col justify-center items-center relative'>
-            <div className="textSectionInHero lg:text-6xl font-[700] lg:w-[800px] md:text-5xl text-4xl
-            md:w-[701px] w-[701px]  text-center">
+            <div className="textSectionInHero lg:text-6xl font-[700] lg:w-[800px] md:text-5xl text-[9vw] text-4xl
+            md:w-[701px] w-[80vw]  text-center">
                 Sites beyond imagination, one prompt away.
             </div>
-            <div className="mt-10 w-[600px]">
+            <div className="mt-10 lg:w-[600px] md:w-[600px] w-[85vw] ">
                 <PlaceholdersAndVanishInput
                     placeholders={placeholders}
                     onChange={handleChange}

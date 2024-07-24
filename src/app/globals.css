@@ -20,7 +20,7 @@
 }
 
 * {
-  /* background-color: #000; */
+  /* overflow-x: hidden; */
 
 }
 
@@ -36,6 +36,24 @@ body {
   .container {
     width: 100vw !important;
     padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .roadmapSectionBox {
+    margin-left: 57px !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .roadmapSectionBox {
+    margin-left: 75px !important;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .roadmapSectionBox {
+    margin-left: 100px !important;
   }
 }
 
@@ -150,23 +168,25 @@ body {
 
 @keyframes slideInFromBottom {
   0% {
-      transform: translateY(100%);
-      opacity: 0;
+    transform: translateY(100%);
+    opacity: 0;
   }
+
   100% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromTop {
   0% {
-      transform: translateY(-100%);
-      opacity: 0;
+    transform: translateY(-100%);
+    opacity: 0;
   }
+
   100% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -174,6 +194,7 @@ body {
 .slide-0 {
   animation: slideInFromBottom 0.4s ease-out forwards;
 }
+
 .slide-1 {
 
   animation: slideInFromTop 0.4s ease-out forwards;
@@ -181,8 +202,8 @@ body {
 }
 
 
-.bglinks{
-  background-color: rgba(255,255,255,0.3) !important
+.bglinks {
+  background-color: rgba(255, 255, 255, 0.3) !important
 }
 
 .bglinks .links {
