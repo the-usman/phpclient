@@ -22,8 +22,23 @@ const Footor = () => {
     };
 
     return (
-        <div className="relative flex flex-col justify-center items-center mt-24">
-            <BackgroundGradientAnimation className="flex flex-col justify-center items-center relative z-10">
+        <motion.div 
+            className="relative flex flex-col justify-center items-center mt-24"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{ perspective: 1000 }}
+        >
+            {isHovered && (
+                <motion.div
+                    className="absolute inset-0 z-0 pt-20"
+                    style={{
+                        background: `radial-gradient(circle at ${(mousePosition.x + 0.5) * 50}% ${(mousePosition.y + 0.5) * 50}%, rgba(150, 18, 163, 0.2), rgba(96, 170, 255, 0.2), rgba(255, 255, 255, 0.1))`
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                />
+            )}
+            <div className="flex flex-col justify-center items-center relative z-10 pt-32">
                 <div className="lg:text-6xl md:text-5xl font-[600] text-white lg:w-[700px] md:w-[500px] w-[90vw] text-[9vw] text-center">
                     DoraAi Footer page is following
                 </div>
@@ -32,9 +47,6 @@ const Footor = () => {
                 </div>
                 <motion.div 
                     className="button1 mt-20 relative"
-                    onMouseMove={handleMouseMove}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
                     style={{ perspective: 1000 }}
                 >
                     <motion.button
@@ -44,15 +56,6 @@ const Footor = () => {
                         }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                        {isHovered && (
-                            <motion.div
-                                className="absolute inset-0"
-                                style={{
-                                    background: `radial-gradient(circle at ${(mousePosition.x + 0.5) * 50}% ${(mousePosition.y + 0.5) * 50}%, rgba(150, 18, 163, 0.2), rgba(96, 170, 255, 0.2), rgba(255, 255, 255, 0.1))`
-                                }}
-                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            />
-                        )}
                         Get Started
                     </motion.button>
                 </motion.div>
@@ -100,8 +103,8 @@ const Footor = () => {
                         <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Cookie policy</a>
                     </nav>
                 </footer>
-            </BackgroundGradientAnimation>
-        </div>
+            </div>
+        </motion.div>
     );
 };
 
