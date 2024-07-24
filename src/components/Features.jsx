@@ -12,6 +12,7 @@ import { ImagesSlider } from './ui/image-slider';
 import CardSlider from './ui/Card-slider';
 import { GlareCard } from './ui/glare-card';
 import { ContainerScroll } from './ui/scroll-animation';
+import { HoverBorderGradient } from './ui/gradientBorder';
 
 const Features = () => {
     const fullText = "Lorem ipsum dolor sit amet consectetur, dejwoie kndoiew ouw er";
@@ -178,7 +179,7 @@ const Features = () => {
                                             {displayedText2}
                                         </div>
                                     </div>
-                                    <div className="mt-5 button w-[70%] text-center">
+                                    <div className="mt-5 button1 w-[70%] text-center">
                                         <button className={`${!changeBg ? "bg-white text-[#9612A3]" : "bg-[#9612A3] text-white"} h-[40px] lg:h-[40px] rounded-xl w-full`}>
                                             Generate
                                         </button>
@@ -204,16 +205,35 @@ const Features = () => {
                         )}
                     </div>
 
-                    <div className="textSection h-[70vh] w-[500px]">
-                        <div className="text-2xl text-[#9612A3] font-[500] ">
+                    <div className="text-2xl text-[#9612A3] font-[500] lg:hidden">
                             AI Pipeline
                         </div>
-                        <div className="text-6xl text-white font-[700] mt-10">
+                        <div className="text-6xl text-white font-[700] mt-10 lg:hidden">
+                            Building Sites, <br /> end-to-end.
+                        </div>
+
+                    <div className='video-editor w-full lg:hidden' ref={ref}>
+                        <video
+                            key={videoIndex}
+                            className='w-[1100px] h-[100vh]'
+                            autoPlay
+                            muted
+                            onEnded={handleVideoEnd}
+                        >
+                            <source src={videos[videoIndex]} type="video/mp4" />
+                        </video>
+                    </div>
+
+                    <div className="textSection h-[70vh] w-[500px]">
+                        <div className="text-2xl text-[#9612A3] font-[500] lg:block hidden ">
+                            AI Pipeline
+                        </div>
+                        <div className="text-6xl text-white font-[700] mt-10 lg:block hidden ">
                             Building Sites, <br /> end-to-end.
                         </div>
 
                         <TracingBeam progress={videoIndex * 0.5} >
-                            <div className="mt-10 w-[400px]" onClick={() => setVideoIndex(0)} style={{ opacity: videoIndex === 0 ? 1 : 0.5, cursor: 'pointer' }}>
+                            <div className="albox mt-10 lg:w-[400px] " onClick={() => setVideoIndex(0)} style={{ opacity: videoIndex === 0 ? 1 : 0.5, cursor: 'pointer' }}>
                                 <div className="text-4xl font-[500] text-white">
                                     Analzying Prompt...
                                 </div>
@@ -221,7 +241,7 @@ const Features = () => {
                                     Dora AI helps determine the subject and style of your site.
                                 </div>
                             </div>
-                            <div className="mt-14 w-[400px]" onClick={() => setVideoIndex(1)} style={{ opacity: videoIndex === 1 ? 1 : 0.5, cursor: 'pointer' }}>
+                            <div className="albox mt-14 lg:w-[400px]" onClick={() => setVideoIndex(1)} style={{ opacity: videoIndex === 1 ? 1 : 0.5, cursor: 'pointer' }}>
                                 <div className="text-4xl font-[500] text-white">
                                     Analzying Prompt...
                                 </div>
@@ -229,7 +249,7 @@ const Features = () => {
                                     Dora AI helps determine the subject and style of your site.
                                 </div>
                             </div>
-                            <div className="mt-10 w-[400px]" onClick={() => setVideoIndex(2)} style={{ opacity: videoIndex === 2 ? 1 : 0.5, cursor: 'pointer' }}>
+                            <div className=" mt-10 lg:w-[400px]" onClick={() => setVideoIndex(2)} style={{ opacity: videoIndex === 2 ? 1 : 0.5, cursor: 'pointer' }}>
                                 <div className="text-4xl font-[500] text-white">
                                     Analzying Prompt...
                                 </div>
@@ -241,12 +261,11 @@ const Features = () => {
 
                         </TracingBeam>
                         <div className='-mt-7'>
-                            <Button
-                                borderRadius="1.75rem"
-                                className="border-neutral-500 dark:border-slate-800 p-3 text-xl bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700"
+                            <HoverBorderGradient
+                                className={'w-[150px] bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700'}
                             >
                                 Get Started
-                            </Button>
+                            </HoverBorderGradient>
                         </div>
 
                     </div>
@@ -349,7 +368,7 @@ const Features = () => {
             <div className="cards flex flex-wrap justify-center items-center  gap-5 mt-10 ">
                 <div className='flex gap-5 w-[90%] justify-between items-center'>
                     <div className="">
-                        <GlareCard  >
+                        <GlareCard>
                             <div className="text-3xl font-[700] text-white">
                                 AI-Powered Designs
                             </div>
@@ -357,16 +376,39 @@ const Features = () => {
                                 <div>
                                     No templates or stock photos. Dora AI yields results 100% tailored to your prompt.
                                 </div>
-                                <Image src={'/arrow.svg'} width={30} height={30} />
+                                <Image src="/arrow.svg" width={30} height={30} alt="Arrow Icon" />
                             </div>
-                            <div className=''>
-                                <Image src={images[0]} width={300} height={700} className='h-[500px] rounded-2xl mt-10' />
-                                <div className="relative">
-                                    <Image src={'/image1.png'} width={100} height={100} className='absolute hover:bg-white border border-gray-500 p-5 ' />
+                            <div className='flex '>
+                                <div>
+                                    <Image src={images[0]} width={300} height={700} className="h-[500px] rounded-2xl mt-10" alt="Main Image" />
+                                </div>
+                                <div className="relative flex flex-wrap w-[300px]">
+                                    <div className='absolute'>
+                                        <Image src="/nike=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
+                                    </div>
+
+                                    <div className='absolute -right-20'>
+                                        <Image src="/tesla=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
+                                    </div>
+
+
+                                    <div className='absolute right-1 top-36'>
+                                        <Image src="/netflix=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
+                                    </div>
+
+
+                                    <div className='absolute top-[300px]'>
+                                        <Image src="/mcdonalds=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
+                                    </div>
+
+
+                                    <div className='absolute top-[300px] -right-20'>
+                                        <Image src="/nike=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
+                                    </div>
                                 </div>
                             </div>
-
                         </GlareCard>
+
                     </div>
                     <div className="container-wrapper p-5 w-[650px] rounded-2xl" >
                         <div className="text-3xl font-[700] text-white">

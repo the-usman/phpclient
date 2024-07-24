@@ -45,8 +45,8 @@ body {
     /* padding: 30px; */
   }
 
-  .cardContainer {
-    /* width: 60vw !important; */
+  .editor {
+    display: none !important;
   }
 }
 
@@ -62,9 +62,9 @@ body {
 }
 
 .container-wrapper {
-  box-shadow: 2px 6px 6px rgba(255, 255, 255, 0.1), 2px 6px 6px rgba(255, 255, 255, 0.1), 2px 6px 6px rgba(255, 255, 255,0.1), 2px 6px 6px rgba(255, 255, 255, 0.1);
-  border-radius: 12px; /* Optional, for rounded corners */
-  overflow: hidden; /* Ensures content stays within the rounded corners */
+    box-shadow: inset 0 0px 10px 0px #FFFFFF;
+  
+
 }
 
 .navbar {
@@ -72,7 +72,7 @@ body {
   left: 0;
   position: sticky;
   z-index: 999999999999;
-  background-color: #000;
+  /* background-color: #000; */
 }
 
 
@@ -102,4 +102,48 @@ body {
 .word {
   display: inline-block;
   margin-right: 1em;
+}
+
+@keyframes shine {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* .activeImage {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  animation: shine 2s infinite;
+} */
+
+.videoRoadmap {
+  /* width: 450px !important; */
+  height: 100% !important;
+  /* aspect-ratio: 15/21; */
+  /* margin-left: 30px; */
+}
+
+.hoverButton {
+  box-shadow: inset 0 0px 10px 0px #FFFFFF;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: 0.4s;
+  /* border-radius: 10px; */
+}
+
+.hoverButton:hover {
+  box-shadow: inset 0 0px 20px 0px #FFFFFF;
+}
+
+body{
+  overflow-x: hidden;
+  width: 100%;
 }

@@ -18,12 +18,9 @@ const FAQ = () => {
                     Your feedback will help Dora AI improve in future versions.
                 </div>
                 <div className="button1 mt-20">
-                    <Button
-                        borderRadius="1.75rem"
-                        className="border-neutral-500 dark:border-slate-800 p-3 text-xl bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700"
-                    >
+                    <button className='hoverButton rounded-full'>
                         Join Discord
-                    </Button>
+                    </button>
                 </div>
             </div>
             <div className='w-[800px] mt-20 text-xl'>

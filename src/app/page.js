@@ -2,7 +2,7 @@
 
 import FAQ from "@/components/FAQ";
 import Features from "@/components/Features";
-import Footor from "@/components/Footor";
+import Footor from "@/components/About";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Roadmap from "@/components/Roadmap";

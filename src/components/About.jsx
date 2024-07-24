@@ -16,7 +16,7 @@ const Footor = () => {
                     <button
                         className="border-neutral-500 dark:border-slate-800    bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700 hover:from-sky-700 hover:via-[#9612A3] hover:to-[#9612A3] p-10 text-4xl rounded-full w-[500px]"
                     >
-                        Join Discord
+                        Get Started
                     </button>
                 </div>
             </BackgroundGradientAnimation>

@@ -38,7 +38,8 @@ const HeroSection = () => {
     
     return (
         <div className='h-[100vh] flex flex-col justify-center items-center relative'>
-            <div className="textSectionInHero text-6xl font-[700] w-[800px] text-center">
+            <div className="textSectionInHero lg:text-6xl font-[700] lg:w-[800px] md:text-5xl text-4xl
+            md:w-[701px] w-[701px]  text-center">
                 Sites beyond imagination, one prompt away.
             </div>
             <div className="mt-10 w-[600px]">
