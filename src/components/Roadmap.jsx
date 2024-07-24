@@ -5,7 +5,7 @@ import { HoverBorderGradient } from './ui/gradientBorder'
 
 const Roadmap = () => {
     return (
-        <div className='mt-24 flex justify-center flex-col items-center '>
+        <div className='mt-24 flex justify-center flex-col items-center text-gray-500 '>
             <div className="keyFeatures w-full flex flex-col justify-center items-center">
                 <div className="text-[#9612A3] font-[700] lg:text-4xl text-2xl w-full text-center">
                     AI Roadmap

@@ -42,7 +42,7 @@ const Footor = () => {
                 <div className="lg:text-6xl md:text-5xl font-[600] text-white lg:w-[700px] md:w-[500px] w-[90vw] text-[9vw] text-center">
                     DoraAi Footer page is following
                 </div>
-                <div className="w-[800px]">
+                <div className="lg:w-[800px] w-[100vw]">
                     <WordStrip words={['usman   ', 'javed   ', 'ali    ', 'shahg   ', 'usman   ', 'javed   ', 'shahg    ', 'ali', 'ahmad    ', 'Explore    ', 'Innovate     ', 'Create    ', 'Inspire    ', 'Achieve    ']} />
                 </div>
                 <motion.div 
