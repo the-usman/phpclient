@@ -13,6 +13,7 @@ import CardSlider from './ui/Card-slider';
 import { GlareCard } from './ui/glare-card';
 import { ContainerScroll } from './ui/scroll-animation';
 import { HoverBorderGradient } from './ui/gradientBorder';
+// import { document } from 'postcss';
 
 const Features = () => {
     const fullText = "Lorem ipsum dolor sit amet consectetur, dejwoie kndoiew ouw er";
@@ -149,12 +150,21 @@ const Features = () => {
         e.preventDefault();
         console.log("submitted");
     };
+    const [animateSliders, setAnimateSliders] = useState(true)
 
     const handleClick = () => {
-        if (ref.current) {
-            ref.current.click();
-        }
+        const element1 = document.getElementsByClassName("slider")[0];
+        const element2 = document.getElementsByClassName("slider")[1]; 
+        const toggleAnimation = (element, className) => {
+            element.classList.remove(className);
+            void element.offsetWidth; 
+            element.classList.add(className);
+        };
+
+        toggleAnimation(element1, `slide-${"0"}`);
+        toggleAnimation(element2, `slide-${"1"}`);
     };
+
 
     return (
         <div id='features bg-transparent'>
@@ -205,12 +215,12 @@ const Features = () => {
                         )}
                     </div>
 
-                    <div className="text-2xl text-[#9612A3] font-[500] lg:hidden">
-                            AI Pipeline
-                        </div>
-                        <div className="text-6xl text-white font-[700] mt-10 lg:hidden">
-                            Building Sites, <br /> end-to-end.
-                        </div>
+                    <div className="text-2xl text-center w-full text-[#9612A3] font-[500] lg:hidden">
+                        AI Pipeline
+                    </div>
+                    <div className="text-6xl text-white font-[700] mt-10 lg:hidden">
+                        Building Sites, <br /> end-to-end.
+                    </div>
 
                     <div className='video-editor w-full lg:hidden' ref={ref}>
                         <video
@@ -224,43 +234,45 @@ const Features = () => {
                         </video>
                     </div>
 
-                    <div className="textSection h-[70vh] w-[500px]">
-                        <div className="text-2xl text-[#9612A3] font-[500] lg:block hidden ">
+                    <div className="textSection lg:h-[70vh] h-[90vh] lg:w-[500px] w-[100vw] flex flex-col justify-center items-center lg:-ml-20">
+                        <div className="text-2xl text-[#9612A3] font-[500] lg:block hidden text-start w-full px-10">
                             AI Pipeline
                         </div>
                         <div className="text-6xl text-white font-[700] mt-10 lg:block hidden ">
                             Building Sites, <br /> end-to-end.
                         </div>
+                        <div className='w-[60%]'>
 
-                        <TracingBeam progress={videoIndex * 0.5} >
-                            <div className="albox mt-10 lg:w-[400px] " onClick={() => setVideoIndex(0)} style={{ opacity: videoIndex === 0 ? 1 : 0.5, cursor: 'pointer' }}>
-                                <div className="text-4xl font-[500] text-white">
-                                    Analzying Prompt...
+                            <TracingBeam progress={videoIndex < 2 ? videoIndex*0.7: videoIndex *0.5} >
+                                <div className="albox mt-10 lg:w-[400px]  " onClick={() => setVideoIndex(0)} style={{ opacity: videoIndex === 0 ? 1 : 0.5, cursor: 'pointer' }}>
+                                    <div className="text-4xl  font-[500] text-white">
+                                        Analzying Prompt...
+                                    </div>
+                                    <div className="text-lg font-[400] text-white">
+                                        Dora AI helps determine the subject and style of your site.
+                                    </div>
                                 </div>
-                                <div className="text-lg font-[400] text-white">
-                                    Dora AI helps determine the subject and style of your site.
+                                <div className="albox mt-14 lg:w-[400px]" onClick={() => setVideoIndex(1)} style={{ opacity: videoIndex === 1 ? 1 : 0.5, cursor: 'pointer' }}>
+                                    <div className="text-4xl font-[500] text-white">
+                                        Analzying Prompt...
+                                    </div>
+                                    <div className="text-lg font-[400] text-white">
+                                        Dora AI helps determine the subject and style of your site.
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="albox mt-14 lg:w-[400px]" onClick={() => setVideoIndex(1)} style={{ opacity: videoIndex === 1 ? 1 : 0.5, cursor: 'pointer' }}>
-                                <div className="text-4xl font-[500] text-white">
-                                    Analzying Prompt...
-                                </div>
-                                <div className="text-lg font-[400] text-white">
-                                    Dora AI helps determine the subject and style of your site.
-                                </div>
-                            </div>
-                            <div className=" mt-10 lg:w-[400px]" onClick={() => setVideoIndex(2)} style={{ opacity: videoIndex === 2 ? 1 : 0.5, cursor: 'pointer' }}>
-                                <div className="text-4xl font-[500] text-white">
-                                    Analzying Prompt...
-                                </div>
-                                <div className="text-lg font-[400] text-white">
-                                    Dora AI helps determine the subject and style of your site.
+                                <div className=" mt-10 lg:w-[400px]" onClick={() => setVideoIndex(2)} style={{ opacity: videoIndex === 2 ? 1 : 0.5, cursor: 'pointer' }}>
+                                    <div className="text-4xl font-[500] text-white">
+                                        Analzying Prompt...
+                                    </div>
+                                    <div className="text-lg font-[400] text-white">
+                                        Dora AI helps determine the subject and style of your site.
+                                    </div>
+
                                 </div>
 
-                            </div>
-
-                        </TracingBeam>
-                        <div className='-mt-7'>
+                            </TracingBeam>
+                        </div>
+                        <div className=' mt-[3.25rem]'>
                             <HoverBorderGradient
                                 className={'w-[150px] bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700'}
                             >
@@ -271,17 +283,17 @@ const Features = () => {
                     </div>
                 </div>
             </div>
-            <div className="keyFeatures w-full flex flex-col justify-center items-center">
-                <div className="text-[#9612A3] font-[700] text-4xl w-full text-center">
+            <div className="keyFeatures lg:mt-0 mt-[163px] w-full flex flex-col justify-center items-center">
+                <div className="text-[#9612A3] font-[700] lg:text-4xl text-2xl w-full text-center">
                     Key Features
                 </div>
-                <div className="text-white  text-6xl font-[800] w-[800px] text-center mt-10">
+                <div className="text-white  lg:text-6xl text-4xl font-[800] lg:w-[800px] w-[600px] text-center mt-10">
                     The first AI that trulytruly understands websites.
                 </div>
                 <div className="text-gray-500 text-2xl mt-2">
                     Genrating website using AI on any topic
                 </div>
-                <div className="mt-10 w-[800px]">
+                <div className="mt-10 lg:w-[800px] w-[600px]">
                     <PlaceholdersAndVanishInput
                         placeholders={placeholders}
                         onChange={handleChange}
@@ -291,7 +303,7 @@ const Features = () => {
                     />
                 </div>
                 <div className="">
-                    <div className="flex justify-center items-center mt-20">
+                    <div className="flex justify-center items-center mt-20 w-[100vw] overflow-hidden">
                         {images.map((image, idx) => (
                             <motion.div
                                 key={"images" + idx}
@@ -325,15 +337,15 @@ const Features = () => {
             <div className="imageSlider flex flex-col mt-24 justify-center items-center">
                 <motion.div className="warper  absolute rounded-full " style={{ zIndex: 1000, backgroundColor: 'rgba(255,255,255,0.3)' }} whileHover={{ rotate: 60 }}>
 
-                    <Image src={'https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/reload.png'} width={150} height={150} className=' p-5 image-arrow bg-[rgba(150, 18, 163, 0.5)] cursor-pointer' ref={ref} onClick={handleClick} />
+                    <Image src={'https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/reload.png'} width={150} height={150} className=' p-5 image-arrow bg-[rgba(150, 18, 163, 0.5)] cursor-pointer lg:w-[150px] lg:h-[150px] h-[100px] w-[100px]' ref={ref} onClick={handleClick} />
                 </motion.div>
                 <div className='w-[90%] flex justify-between'>
-                    <div className="w-[48%]">
+                    <div className={`slider ${animateSliders ? 'animate' : ''} w-[48%]`}>
                         <ImagesSlider className="h-[40rem] rounded-xl" images={images} ref={ref}>
 
                         </ImagesSlider>
                     </div>
-                    <div className="w-[48%]">
+                    <div className={`slider ${animateSliders ? 'animate' : ''} w-[48%]`} >
                         <ImagesSlider className="h-[40rem] rounded-xl" images={images} direction='right' ref={ref}>
                         </ImagesSlider>
                     </div>
@@ -344,9 +356,9 @@ const Features = () => {
                 <ContainerScroll
                     titleComponent={
                         <>
-                            <h1 className="text-4xl font-semibold text-black dark:text-white">
+                            <h1 className="text-3xl lg:text-4xl font-semibold text-black dark:text-white">
                                 AI Powered designs <br />
-                                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                                <span className="text-4xl lg:text-6xl   font-bold mt-1 leading-none">
                                     Usman Javed
                                 </span>
                             </h1>
@@ -366,7 +378,7 @@ const Features = () => {
 
             {/* </div> */}
             <div className="cards flex flex-wrap justify-center items-center  gap-5 mt-10 ">
-                <div className='flex gap-5 w-[90%] justify-between items-center'>
+                <div className='flex flex-wrap gap-5 w-[90%] lg:justify-between items-center justify-center'>
                     <div className="">
                         <GlareCard>
                             <div className="text-3xl font-[700] text-white">
@@ -410,7 +422,7 @@ const Features = () => {
                         </GlareCard>
 
                     </div>
-                    <div className="container-wrapper p-5 w-[650px] rounded-2xl" >
+                    <div className="container-wrapper p-5 w-[650px] rounded-2xl lg:mt-0 mt-20" >
                         <div className="text-3xl font-[700] text-white">
                             Prompt-relevant, always
                         </div>

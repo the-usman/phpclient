@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useTransform, useSpring, motionValue } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const TracingBeam = ({ children, className, progress }) => {
     const ref = useRef(null);
@@ -31,80 +32,53 @@ export const TracingBeam = ({ children, className, progress }) => {
         }
     );
 
+    const sliderHeight = svgHeight * progress;
+    const starHeight = 29; // Height of the star image
+    const lineHeight = sliderHeight - starHeight; // Ensuring the star does not go beyond the slider height
+
     return (
         <motion.div
             ref={ref}
             className={cn("relative w-full max-w-4xl mx-auto h-full", className)}
         >
-            <div className="absolute -left-4 md:-left-20 top-3">
+            <div className="absolute -left-16 w-[29px]" style={{ height: `${progress * lineHeight +20}px`, transition: 'height 0.5s ease' }}>
+                <div className="w-[2px] ml-[13px] bg-[#1F1F1F]" style={{ height: `${progress * lineHeight +20}px`, transition: 'height 0.5s ease' }}></div>
+                <div className="absolute top-0 left-[9px] w-[10px] slider-bar" style={{
+                    background: "linear-gradient(0deg, rgb(20, 123, 255) 0%, rgba(0, 0, 0, 0) 101.59%)",
+                    filter: "blur(30px)",
+                    height: `${progress * lineHeight +20}px`,
+                    transition: 'height 0.5s ease'
+                }}></div>
+                <div className="absolute top-0 left-[9px] w-[10px] slider-bar" style={{
+                    background: "linear-gradient(0deg, rgba(255, 127, 65, 0.8) 0.03%, rgba(0, 0, 0, 0) 100%)",
+                    filter: "blur(5px)",
+                    height: `${progress * lineHeight +20}px`,
+                    transition: 'height 0.5s ease'
+                }}></div>
+                <div className="absolute top-0 left-[13px] w-[2px] slider-bar" style={{
+                    background: "linear-gradient(rgb(26, 29, 32) 0%, rgb(42, 129, 238) 58.85%, rgb(219, 177, 213) 79.17%, rgb(253, 214, 119) 100%)",
+                    height: `${progress * lineHeight +20}px`,
+                    transition: 'height 0.5s ease'
+                }}></div>
                 <motion.div
-                    transition={{
-                        duration: 0.2,
-                        delay: 0.5,
-                    }}
-                    animate={{
-                        boxShadow:
-                            progress > 0
-                                ? "none"
-                                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-                    }}
-                    className="ml-[27px] h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center"
+                    className="absolute left-0 w-[29px] h-[29px] slider-star"
+                    style={{ top: `${progress * lineHeight}px` }}
+                    animate={{ top: `${progress * lineHeight}px` }}
+                    transition={{ type: "spring", stiffness: 500, damping: 90 }}
                 >
-                    <motion.div
-                        transition={{
-                            duration: 0.2,
-                            delay: 0.5,
-                        }}
-                        animate={{
-                            backgroundColor: progress > 0 ? "white" : "var(--emerald-500)",
-                            borderColor: progress > 0 ? "white" : "var(--emerald-600)",
-                        }}
-                        className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
+                    <Image
+                        src="https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/input-star.png"
+                        alt="Star"
+                        width={29}
+                        height={29}
                     />
                 </motion.div>
-                <svg
-                    viewBox={`0 0 20 ${svgHeight}`}
-                    width="20"
-                    height={svgHeight} // Set the SVG height
-                    className=" ml-4 block"
-                    aria-hidden="true"
-                >
-                    <motion.path
-                        d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
-                        fill="none"
-                        stroke="#9091A0"
-                        strokeOpacity="0.16"
-                        transition={{
-                            duration: 10,
-                        }}
-                    ></motion.path>
-                    <motion.path
-                        d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
-                        fill="none"
-                        stroke="url(#gradient)"
-                        strokeWidth="1.25"
-                        className="motion-reduce:hidden"
-                        transition={{
-                            duration: 10,
-                        }}
-                    ></motion.path>
-                    <defs>
-                        <motion.linearGradient
-                            id="gradient"
-                            gradientUnits="userSpaceOnUse"
-                            x1="0"
-                            x2="0"
-                            y1={y1} // set y1 for gradient
-                            y2={y2} // set y2 for gradient
-                        >
-                            <stop stopColor="#18CCFC" stopOpacity="0"></stop>
-                            <stop stopColor="#18CCFC"></stop>
-                            <stop offset="0.325" stopColor="#6344F5"></stop>
-                            <stop offset="1" stopColor="#AE48FF" stopOpacity="0"></stop>
-                        </motion.linearGradient>
-                    </defs>
-                </svg>
             </div>
+            <motion.div
+                className="absolute -left-[51px] w-[1px] bg-gray-700 hidden lg:block "
+                style={{ height: `${svgHeight}px`, zIndex: -1}}
+                transition={{ type: "spring", stiffness: 500, damping: 90 }}
+            />
             <div ref={contentRef}>{children}</div>
         </motion.div>
     );

@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Roadmap from "@/components/Roadmap";
 import CardSlider from "@/components/ui/Card-slider";
 import React, { useState } from "react";
+import SliderComponent from "@/components/Sliders";
 
 export default function Home() {
   
@@ -20,6 +21,7 @@ export default function Home() {
       <Roadmap />
       <FAQ />
       <Footor />
+      {/* <SliderComponent /> */}
     </main>
   );
 }
