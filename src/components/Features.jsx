@@ -377,8 +377,8 @@ const Features = () => {
             </div>
 
             {/* </div> */}
-            <div className="cards flex flex-wrap lg:flex-nowrap justify-center items-center  gap-5 mt-10 ">
-                <div className='flex flex-wrap gap-5 w-[90%] lg:w-full lg:justify-between items-center justify-center'>
+            <div className="cards flex flex-wrap lg:flex-nowrap justify-center items-center gap-5 mt-10 ">
+                <div className='flex flex-wrap gap-5 w-[90%] lg:w-full lg:justify-evenly items-center justify-center p-1'>
                     <div className="">
                         <GlareCard>
                             <div className="text-3xl font-[700] text-white">

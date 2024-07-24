@@ -1,47 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { FaMinus, FaPlus } from 'react-icons/fa';
 
 const Accordion = () => {
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleAccordion = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+    const accordionData = [
+        {
+            title: "What is Material Tailwind?",
+            content: "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+        },
+        {
+            title: "How to use Material Tailwind?",
+            content: "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+        },
+        {
+            title: "What can I do with Material Tailwind?",
+            content: "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+        }
+    ];
+
     return (
-        <div>
-            <div className="join join-vertical w-full">
-                <div className="collapse collapse-arrow join-item border-base-300 border">
-                    <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title text-xl font-medium">Dora most asked </div>
-                    <div className="collapse-content">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, dolorum. Ex voluptas deleniti aliquam error deserunt nisi natus nam enim! Error nam saepe hic commodi iste blanditiis maiores exercitationem facere.</p>
+        <>
+            {accordionData.map((item, index) => (
+                <div className="relative mb-3 text-white " key={index}>
+                    <h6 className="mb-3 border border-white rounded-xl bg-gray-700 transition-all duration-300 hover:bg-gray-900">
+                        <button
+                            className="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-white rounded-t-1 group text-dark-500"
+                            onClick={() => toggleAccordion(index)}
+                        >
+                            <span>{item.title}</span>
+                            {/* <i className={`absolute right-0 pt-1 text-xs fa ${activeIndex === index ? 'fa-minus' : 'fa-plus'}`}></i> */}
+                            <div className='absolute right-10 pt-1 text-xs'>
+                                {activeIndex !== index ? <FaPlus />: <FaMinus />}
+                                </div>
+                        </button>
+                    </h6>
+                    <div
+                        className={`transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === index ? 'h-auto' : 'h-0'}`}
+                    >
+                        <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+                            {item.content}
+                        </div>
                     </div>
                 </div>
-                <div className="collapse collapse-arrow join-item border-base-300 border">
-                    <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title text-xl font-medium">Dora most asked </div>
-                    <div className="collapse-content">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, dolorum. Ex voluptas deleniti aliquam error deserunt nisi natus nam enim! Error nam saepe hic commodi iste blanditiis maiores exercitationem facere.</p>
-                    </div>
-                </div>
-                <div className="collapse collapse-arrow join-item border-base-300 border">
-                    <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title text-xl font-medium">Dora most asked </div>
-                    <div className="collapse-content">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, dolorum. Ex voluptas deleniti aliquam error deserunt nisi natus nam enim! Error nam saepe hic commodi iste blanditiis maiores exercitationem facere.</p>
-                    </div>
-                </div>
-                <div className="collapse collapse-arrow join-item border-base-300 border">
-                    <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title text-xl font-medium">Dora most asked </div>
-                    <div className="collapse-content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repellat enim eius sunt impedit mollitia aspernatur inventore exercitationem corporis repellendus cupiditate explicabo libero distinctio quia assumenda est velit, nulla officia?</p>
-                    </div>
-                </div>
-                <div className="collapse collapse-arrow join-item border-base-300 border">
-                    <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title text-xl font-medium">Dora most asked </div>
-                    <div className="collapse-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus cupiditate ipsa, quos veritatis placeat officiis? Officiis labore dolor animi, explicabo reiciendis vitae, dicta sequi cum, error autem cupiditate fugiat numquam?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+            ))}
+        </>
+    );
 }
 
-export default Accordion
+export default Accordion;

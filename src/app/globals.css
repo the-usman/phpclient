@@ -29,6 +29,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden !important;
+  /* color: white; */
 }
 
 @media only screen and (min-width: 600px) {
@@ -39,7 +40,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
   .roadmapSectionBox {
     margin-left: 57px !important;
   }
@@ -50,10 +51,11 @@ body {
     margin-left: 75px !important;
   }
 }
+  */
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 450px) {
   .roadmapSectionBox {
-    margin-left: 100px !important;
+    margin-left: 10px !important;
   }
 }
 

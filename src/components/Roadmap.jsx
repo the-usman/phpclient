@@ -83,15 +83,15 @@ const Roadmap = () => {
                     <div className="box01 h-[50px] lg:w-[500px] md:w-[500px] w-[95vw] rounded-xl mt-5 flex items-center px-7" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
 
                         <div className="px-3">
-                            <div className="text-xl">
-                                ... and many more <span className='text-white underline text-xl font-[500]'>  See full roadmap</span>
+                            <div className="lg:text-xl  md:text-xl text-lg">
+                                ... and many more <span className='text-white underline lg:text-xl  md:text-xl text-lg font-[500]'>  See full roadmap</span>
                             </div>
                         </div>
                     </div>
 
 
                 </div>
-                <div className='w-[510px] lg:ml-32 md:ml-32 flex flex-col items-center ml-0'>
+                <div className='lg:w-[500px] lg:ml-32 md:ml-32 ml-3 flex flex-col items-center '>
                     <div className="text-white text-center text-xl w-[90vw]">
                         Your support is vital. <br />
                         With every subscription, you fund the R&D of Dora AI.

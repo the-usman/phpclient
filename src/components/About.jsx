@@ -2,7 +2,7 @@ import React from 'react';
 import WordStrip from './ui/WordStrip';
 import { BackgroundGradientAnimation } from './ui/gradient-animation';
 
-const Footor = () => {
+const About = () => {
     return (
         <div className="flex flex-col justify-center items-center mt-24 ">
             <BackgroundGradientAnimation className="flex flex-col justify-center items-center">
@@ -24,4 +24,4 @@ const Footor = () => {
     );
 };
 
-export default Footor;
+export default About;
