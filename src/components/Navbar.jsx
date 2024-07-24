@@ -44,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <div className="button1">
                     <HoverBorderGradient
-                        className={'w-[150px] bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700'}
+                        className={'w-[150px]'}
                     >
                         Get Started
                     </HoverBorderGradient>
