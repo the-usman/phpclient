@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +30,7 @@ export function HoverBorderGradient({
     };
 
     const baseGradient = "bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700";
-    const hoverGradient = `radial-gradient(circle at ${((mousePosition.x + 1) * 50).toFixed(1)}% ${((mousePosition.y + 1) * 50).toFixed(1)}%, rgba(255, 255, 255, 0.5) 0%, rgba(96, 170, 255, 0.3) 20px, transparent 40px)`;
+    const hoverGradient = `radial-gradient(circle at ${(mousePosition.x + 1) * 50}% ${(mousePosition.y + 1) * 50}%, rgba(255, 255, 255, 0.5) 0%, rgba(96, 170, 255, 0.3) 20px, transparent 40px)`;
 
     return (
         <Tag
@@ -49,6 +49,12 @@ export function HoverBorderGradient({
                     className,
                     baseGradient
                 )}
+                animate={{
+                    rotateX: mousePosition.y * -30,  // Increased magnitude
+                    rotateY: mousePosition.x * 30,   // Increased magnitude
+                    // rotateZ: mousePosition.x * 30    // Z-axis rotation
+                }}
+                transition={{ duration: 0.1 }}
             >
                 {children}
             </motion.div>
@@ -67,8 +73,8 @@ export function HoverBorderGradient({
                     className="absolute inset-0 z-10"
                     style={{
                         background: hoverGradient,
-                        transform: `rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`,
-                        transition: "transform 0.2s"
+                        mixBlendMode: "screen",
+                        borderRadius: '20px'
                     }}
                 />
             )}
