@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Oswald:wght@200..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,12 +28,39 @@
 }
 
 body {
-  background: #000;
+  /* background: #000; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   width: 100vw;
   height: 100%;
   overflow-x: hidden !important;
   color: white;
 }
+
+
+.heroSectionH1 {
+  font-family: "Bebas Neue", sans-serif !important;
+  font-weight: 700 !important;
+
+}
+
+.brefContainer {
+  font-family: "Oswald", sans-serif;
+  width: 100vw !important;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.sideLogoSection {
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.white-box {
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+
 
 @media only screen and (min-width: 600px) {
 
