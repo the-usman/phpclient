@@ -11,6 +11,7 @@ import SliderComponent from "@/components/Sliders";
 import About from "@/components/About";
 import Footor from "@/components/Footor";
 import HeroSection1 from "@/components/HeroSection1";
+import Features1 from "@/components/Features/Features1";
 
 export default function Home() {
   
@@ -26,7 +27,9 @@ export default function Home() {
       <About />
       <Footor /> */}
       {/* <SliderComponent /> */}
+      
       <HeroSection1 />
+      <Features1 />
     </main>
   );
 }

@@ -115,7 +115,7 @@ export const ImagesSlider = ({
     return (
         <div
             className={cn(
-                "overflow-hidden h-full w-full relative flex items-center justify-center container-wrapper",
+                "overflow-hidden h-full w-full relative flex items-center justify-center container-wrapper rounded-2xl",
                 className
             )}
             style={{
@@ -125,7 +125,7 @@ export const ImagesSlider = ({
             {areImagesLoaded && children}
             {areImagesLoaded && overlay && (
                 <div
-                    className={cn("absolute inset-0 bg-black/60 z-40 container-wrapper", overlayClassName)}
+                    className={cn("absolute inset-0 bg-black/60 z-40 container-wrapper rounded-2xl", overlayClassName)}
                 />
             )}
 
@@ -138,7 +138,7 @@ export const ImagesSlider = ({
                         animate="visible"
                         exit={direction === "up" ? "upExit" : "downExit"}
                         variants={slideVariants}
-                        className="image h-full w-full absolute inset-0 object-cover object-center container-wrapper"
+                        className="image h-full w-full absolute inset-0 object-cover object-center container-wrapper rounded-2xl"
                     />
                 </AnimatePresence>
             )}

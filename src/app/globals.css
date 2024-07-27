@@ -50,7 +50,7 @@ body {
   font-style: normal;
 }
 
-.sideCards{
+.sideCards {
   /* transform: scale(0.7); */
 }
 
@@ -253,4 +253,33 @@ body {
 
 .linkSection li {
   cursor: pointer;
+}
+
+.map-container {
+  position: absolute;
+  width: 100vw;
+  height: 200vh; /* Increased height to allow scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 100%;
+  height: auto;
+}
+
+.point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+
+.imageContainer {
+  background: linear-gradient(0deg, #D2C5FF 3.6041259765625%, #F5F4F3 30.7403564453125%, #D0FFF0 50.76904296875%, #345C59 98.4466552734375%);
+  background-size: cover;
 }
