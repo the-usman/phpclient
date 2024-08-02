@@ -56,7 +56,7 @@ const images = [
 
 export default function IconCloudDemo() {
     return (
-        <div className="flex flex-col items-center h-[100vh] overflow-hidden relative bg-black pt-10">
+        <div className="flex flex-col items-center h-[100vh] overflow-hidden relative bg-[#030014] pt-10">
             <div>
                 <h1 className="text-white text-6xl font-[800]">
                     Key Features
@@ -68,14 +68,6 @@ export default function IconCloudDemo() {
             <div className="flex justify-between">
                 <div className="relative flex w-[370px] justify-between ">
                     <IconCloud iconSlugs={slugs} />
-                </div>
-                <div className="relative">
-                    <div className="border border-white absolute w-[500px] h-[600px] left-[50px] rounded-2xl top-[50px] " style={{ zIndex: 9999 }}>
-                        <ImagesSlider images={images}></ImagesSlider>
-                    </div>
-                    <div className="border border-white absolute w-[500px] h-[600px] right-[390px] rounded-2xl top-[50px]" style={{ zIndex: 9999 }}>
-                        <ImagesSlider images={images}></ImagesSlider>
-                    </div>
                 </div>
             </div>
         </div>

@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <main className="">
 
-      {/* <Navbar />
-      <HeroSection /> */}
+      <Navbar />
+      {/* <HeroSection /> */}
       {/* <CardSlider /> */}
       {/* <Features />
       <Roadmap />
