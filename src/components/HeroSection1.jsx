@@ -42,7 +42,7 @@ const HeroSection1 = () => {
                 end: 'top top',
                 end: "+=1500px",
                 pin: true,
-                markers: true,
+                // markers: true,
                 scrub: true,
                 onUpdate: self => {
                     const progress = self.progress * 2;
