@@ -23,13 +23,14 @@ export default function Home() {
       {/* <CardSlider /> */}
       {/* <Features />
       <Roadmap />
-      <FAQ />
-      <About />
-      <Footor /> */}
-      {/* <SliderComponent /> */}
       
+      
+       */}
+      {/* <SliderComponent /> */}
       <HeroSection1 />
       <Features1 />
+      <FAQ />
+      <About />
     </main>
   );
 }

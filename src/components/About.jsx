@@ -27,13 +27,14 @@ const Footor = () => {
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            style={{ perspective: 1000 }}
+            style={{ perspective: 1000, borderRadius: '50%' }} // Radial boundary effect
         >
             {isHovered && (
                 <motion.div
                     className="absolute inset-0 z-0 pt-20"
                     style={{
-                        background: `radial-gradient(circle at ${(mousePosition.x + 0.5) * 50}% ${(mousePosition.y + 0.5) * 50}%, rgba(150, 18, 163, 0.2), rgba(96, 170, 255, 0.2), rgba(255, 255, 255, 0.1))`
+                        background: `radial-gradient(circle at ${(mousePosition.x + 0.5) * 50}% ${(mousePosition.y + 0.5) * 50}%, rgba(150, 18, 163, 0.2), rgba(96, 170, 255, 0.2), rgba(255, 255, 255, 0.1))`,
+                        borderRadius: '50%', // Radial boundary effect
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 />
@@ -47,12 +48,12 @@ const Footor = () => {
                 </div>
                 <motion.div 
                     className="button1 mt-20 relative"
-                    style={{ perspective: 1000 }}
+                    style={{ perspective: 1000, borderRadius: '50%' }} // Radial boundary effect
                 >
                     <motion.button
                         className="relative border-neutral-500 dark:border-slate-800 bg-gradient-to-r from-[#9612A3] via-[#9612A3] to-sky-700 hover:from-sky-700 hover:via-[#9612A3] hover:to-[#9612A3] lg:p-10 p-5 lg:text-4xl text-3xl rounded-full lg:w-[500px] md:w-[400px] w-[80vw]"
                         style={{
-                            transform: `rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`
+                            transform: `rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`,
                         }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
