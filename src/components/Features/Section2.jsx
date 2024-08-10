@@ -72,11 +72,11 @@ const Section2 = () => {
                         {visibleContent[0] && (
                             <div className='border border-white p-4 rounded-xl w-[600px]'>
                                 <div className="flex">
-                                    <h1 className='text-8xl text-white font-[600]'>3</h1>
-                                    <h1 className='text-5xl ml-10 text-white content'>Converting to Code</h1>
+                                    <h1 className='text-6xl text-white font-[600]'>1.</h1>
+                                    <h1 className='text-3xl ml-10 text-white content font-extrabold'>Effortless Setup & Content Input</h1>
                                 </div>
                                 <p className='w-[500px] ml-20 text-xl text-white'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sint quis accusamus consequuntur aut laudantium nihil architecto ea sunt vitae.
+                                    Define your website's goals, input your content, and let our AI web builder handle the rest with smart templates that match your vision.
                                 </p>
                                 <div className="videoDiv">
                                     <video loop autoPlay muted className="w-[400px] h-[400px] ml-[100px]">
@@ -93,13 +93,12 @@ const Section2 = () => {
                         {visibleContent[1] && (
                             <div className='border border-white p-4 rounded-xl'>
                                 <div className="flex">
-                                    <div className="">
-                                        <h1 className='text-8xl text-white font-[600]'>3</h1>
-                                        <h1 className='text-5xl ml-10 text-white content'>Converting to Code</h1>
-                                    </div>
+
+                                    <h1 className='text-6xl text-white font-[600]'>2.</h1>
+                                    <h1 className='text-3xl ml-10 text-white content font-extrabold'>Customization & Design Enhancement</h1>
                                 </div>
-                                <p className='w-[500px] ml-20 text-xl text-white'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sint quis accusamus consequuntur aut laudantium nihil architecto ea sunt vitae.
+                                <p className='w-[500px] ml-20 text-xl text-white mt-10'>
+                                    Customize your AI-generated design with ease. Adjust layouts, colors, and fonts to fit your brand, and add features like contact forms and e-commerce with a few clicks.
                                 </p>
                                 <div className="videoDiv">
                                     <video loop autoPlay muted className="w-[400px] h-[400px] ml-[100px]">
@@ -116,11 +115,11 @@ const Section2 = () => {
                         {visibleContent[2] && (
                             <div className='border border-white p-4 rounded-xl w-[600px]'>
                                 <div className="flex">
-                                    <h1 className='text-8xl text-white font-[600]'>3</h1>
-                                    <h1 className='text-5xl ml-10 text-white content'>Converting to Code</h1>
+                                    <h1 className='text-6xl text-white font-[600]'>3.</h1>
+                                    <h1 className='text-3xl ml-10 text-white content font-extrabold'>Review, Test, & Launch</h1>
                                 </div>
                                 <p className='w-[500px] ml-20 text-xl text-white'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sint quis accusamus consequuntur aut laudantium nihil architecto ea sunt vitae.
+                                Test and optimize your site with AI tools. Ensure flawless functionality and fast loading, then launch and monitor for any needed adjustments.
                                 </p>
                                 <div className="videoDiv">
                                     <video loop autoPlay muted className="w-[400px] h-[400px] ml-[100px]">

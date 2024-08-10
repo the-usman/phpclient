@@ -37,9 +37,8 @@ const Navbar = () => {
                     <ul className='flex justify-center items-center h-[50px]'>
                         <li className='px-5 links text-white text-xl flex justify-center items-center'>Home</li>
                         <li className='px-5 links text-white text-xl flex justify-center items-center'>Features</li>
-                        <li className='px-5 links text-white text-xl flex justify-center items-center'>Roadmap</li>
                         <li className='px-5 links text-white text-xl flex justify-center items-center'>FAQ</li>
-                        <li className='px-5 links text-white text-xl flex justify-center items-center'>About Dora</li>
+                        <li className='px-5 links text-white text-xl flex justify-center items-center'>About US</li>
                     </ul>
                 </div>
                 <div className="button1">

@@ -1,42 +1,25 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/Marquee";
+import Image from "next/image";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    body: "Create a stunning website for your woodworking business. Showcase your craftsmanship with ease.",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    body: "Build a professional website for your photography portfolio. Highlight your best shots effortlessly.",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    body: "Launch a sleek website for your restaurant. Easily display your menu and attract more customers.",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    body: "Design a modern website for your tech startup. Present your innovative solutions with style.",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    body: "Create a beautiful website for your handmade jewelry business. Let your creations shine online.",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    body: "Build a captivating website for your fitness studio. Schedule classes and engage your community.",
   },
 ];
 
@@ -52,23 +35,16 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 flex",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div>
-      </div>
+      
       <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <Image src={'/arrow.svg'} width={30} height={30} />
     </figure>
   );
 };

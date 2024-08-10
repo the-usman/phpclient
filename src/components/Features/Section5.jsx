@@ -3,119 +3,78 @@ import { ContainerScroll } from '../ui/scroll-animation';
 import Image from 'next/image';
 import CardSlider from '../ui/Card-slider';
 import { GlareCard } from '../ui/glare-card';
+import { Cover } from '../ui/Cover';
+import { CardSpotlight } from '../ui/card-spotlight';
+import { CardDemo } from '../ui/compareCard';
+
+
+const Step = ({ title }) => {
+    return (
+        <li className="flex gap-2 items-start">
+            <CheckIcon />
+            <p className="text-white">{title}</p>
+        </li>
+    );
+};
+
+const CheckIcon = () => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+                d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm2.293 7.293a1 1 0 0 1 1.497 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497l.094 .083l1.293 1.292l3.293 -3.292z"
+                fill="currentColor"
+                strokeWidth="0"
+            />
+        </svg>
+    );
+};
 
 const Section5 = () => {
-    const images = ["https://images.unsplash.com/photo-1455587734955-081b22074882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
 
-        "https://images.unsplash.com/photo-1517840901100-8179e982acb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWx8ZW58MHx8MHx8fDA%3D",
-
-        "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvdGVsfGVufDB8fDB8fHww",
-
-        "https://images.unsplash.com/photo-1541971875076-8f970d573be6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsfGVufDB8fDB8fHww",
-
-        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhvdGVsfGVufDB8fDB8fHww",
-        "https://images.unsplash.com/photo-1517840901100-8179e982acb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWx8ZW58MHx8MHx8fDA%3D",
-
-        "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvdGVsfGVufDB8fDB8fHww",
-
-        "https://images.unsplash.com/photo-1541971875076-8f970d573be6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsfGVufDB8fDB8fHww",
-
-        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhvdGVsfGVufDB8fDB8fHww",
-    ];
     return (
-        <div>
-            <div className="flex flex-col overflow-hidden">
-                <ContainerScroll
-                    titleComponent={
-                        <>
-                            <h1 className="text-3xl lg:text-4xl font-semibold text-black dark:text-white">
-                                AI Powered designs <br />
-                                <span className="text-4xl lg:text-6xl   font-bold mt-1 leading-none">
-                                    Usman Javed
-                                </span>
-                            </h1>
-                        </>
-                    }
-                >
-                    <Image
-                        src={images[0]}
-                        alt="hero"
-                        height={720}
-                        width={1400}
-                        className="mx-auto rounded-2xl object-cover h-full object-left-top"
-                        draggable={false}
-                    />
-                </ContainerScroll>
-            </div>
-
-
-
-
-            <div className="cards flex flex-wrap lg:flex-nowrap justify-center items-center gap-5 mt-10 ">
-                <div className='flex flex-wrap gap-5 w-[90%] lg:w-full lg:justify-evenly items-center justify-center p-1'>
-                    <div className="">
-                        <GlareCard>
-                            <div className="text-3xl font-[700] text-white">
-                                AI-Powered Designs
-                            </div>
-                            <div className="text-xl mt-2 flex justify-between">
-                                <div>
-                                    No templates or stock photos. Dora AI yields results 100% tailored to your prompt.
-                                </div>
-                                <Image src="/arrow.svg" width={30} height={30} alt="Arrow Icon" />
-                            </div>
-                            <div className='flex '>
-                                <div>
-                                    <Image src={images[0]} width={300} height={700} className="h-[500px] rounded-2xl mt-10" alt="Main Image" />
-                                </div>
-                                <div className="relative hidden flex-wrap w-[300px] lg:flex md:flex">
-                                    <div className='absolute'>
-                                        <Image src="/nike=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
-                                    </div>
-
-                                    <div className='absolute -right-20'>
-                                        <Image src="/tesla=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
-                                    </div>
-
-
-                                    <div className='absolute right-1 top-36'>
-                                        <Image src="/netflix=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
-                                    </div>
-
-
-                                    <div className='absolute top-[300px]'>
-                                        <Image src="/mcdonalds=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
-                                    </div>
-
-
-                                    <div className='absolute top-[300px] -right-20'>
-                                        <Image src="/nike=Default.webp" width={200} height={200} className="rounded-full w-[200px] h-[200px] activeImage" alt="Overlay Image" />
-                                    </div>
-                                </div>
-                            </div>
-                        </GlareCard>
-
-                    </div>
-                    <div className="container-wrapper p-5 lg:w-[600px] md:w-[700px] w-[90vw] rounded-2xl lg:mt-0 mt-20" >
-                        <div className="text-3xl font-[700] text-white">
-                            Prompt-relevant, always
+        <div className='h-[120vh]'>
+            <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+                Build amazing websites <br /> at <Cover>warp speed</Cover>
+            </h1>
+            <div className='flex'>
+                <div className='flex flex-col justify-center items-center w-[50%] '>
+                    <h1 className='text-2xl font-extrabold mb-10'>Step 1. Create Account</h1>
+                    <CardSpotlight className="h-96 w-96">
+                        <p className="text-xl font-bold relative z-20 mt-2 text-white">
+                            Authentication steps
+                        </p>
+                        <div className="text-neutral-200 mt-4 relative z-20">
+                            Follow these steps to secure your account:
+                            <ul className="list-none  mt-2">
+                                <Step title="Enter your email address" />
+                                <Step title="Create a strong password" />
+                                <Step title="Set up two-factor authentication" />
+                                <Step title="Verify your identity" />
+                            </ul>
                         </div>
-                        <div className="text-xl mt-2">
-                            No templates or stock photos. Dora AI yields results 100% tailored to your prompt.
-                        </div>
-
-                        <CardSlider images={images} />
-                        <div className="text-xl flex justify-between">
-                            <div className='border border-gray-500 px-4 py-2 rounded-full'>
-                                Our more designs are available here.
-                            </div>
-                            <Image src={'/arrow.svg'} width={30} height={30} />
-                        </div>
-                    </div>
+                        <p className="text-neutral-300 mt-4 relative z-20 text-sm">
+                            Ensuring your account is properly secured helps protect your personal
+                            information and data.
+                        </p>
+                    </CardSpotlight>
+                </div>
+                <div className='flex flex-col justify-center items-center w-[50%] '>
+                    <h1 className='text-2xl font-extrabold mb-10'>Step 2. Compare our performance</h1>
+                    <CardDemo />
                 </div>
             </div>
         </div>
     )
 }
+
+
 
 export default Section5

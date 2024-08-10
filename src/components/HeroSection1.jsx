@@ -16,7 +16,7 @@ import Section1 from './HeroSection/Section1'
 const HeroSection1 = () => {
     
     gsap.registerPlugin(ScrollTrigger);
-    const fullText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vel nisi sunt beatae off";
+    const fullText = "Create any type of website effortlessly with AI. Input your needs, and let our platform handle the rest.";
     // const fullText2 = "Lorem ipsum dolor sit,";
     const [displayedText, setDisplayedText] = useState('');
     const ref = useRef(null);
@@ -52,7 +52,7 @@ const HeroSection1 = () => {
 
                 <div className="">
                     <div className='w-[100vw] p-10 text-white'>
-                        <div className='text-7xl px-10 font-[200]'>
+                        <div className='text-6xl px-10 font-[200]'>
                             {displayedText}
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const HeroSection1 = () => {
                                         className="text-2xl font-bold text-neutral-200 text-center flex justify-center"
                                     >
                                         <div>
-                                            AI Web React
+                                        Effortless AI Design
                                         </div>
                                     </CardItem>
                                     <CardItem
@@ -110,7 +110,7 @@ const HeroSection1 = () => {
                                         className="text-2xl font-bold text-neutral-200 text-center flex justify-center"
                                     >
                                         <div>
-                                            AI Web React
+                                        Instant AI Websites
                                         </div>
                                     </CardItem>
                                     <CardItem
@@ -155,7 +155,7 @@ const HeroSection1 = () => {
                                         className="text-2xl font-bold text-neutral-200 text-center flex justify-center"
                                     >
                                         <div>
-                                            AI Web React
+                                        Smart Website Creation
                                         </div>
                                     </CardItem>
                                     <CardItem

@@ -41,10 +41,10 @@ const Footor = () => {
             )}
             <div className="flex flex-col justify-center items-center relative z-10 pt-32">
                 <div className="lg:text-6xl md:text-5xl font-[600] text-white lg:w-[700px] md:w-[500px] w-[90vw] text-[9vw] text-center">
-                    DoraAi Footer page is following
+                    Your Website, Built with AI
                 </div>
                 <div className="lg:w-[800px] w-[100vw]">
-                    <WordStrip words={['usman   ', 'javed   ', 'ali    ', 'shahg   ', 'usman   ', 'javed   ', 'shahg    ', 'ali', 'ahmad    ', 'Explore    ', 'Innovate     ', 'Create    ', 'Inspire    ', 'Achieve    ']} />
+                    <WordStrip words={['Design   ', 'Build   ', 'Launch   ', 'Innovate   ', 'Create   ', 'AI-powered   ', 'Customizable   ', 'Responsive', 'Seamless    ', 'Efficient    ', 'Explore    ', 'Innovate    ', 'Inspire    ', 'Achieve    ']} />
                 </div>
                 <motion.div 
                     className="button1 mt-20 relative"
@@ -76,32 +76,32 @@ const Footor = () => {
                             ></path>
                         </svg>
                         <p className="text-lg">
-                            ACME Industries Ltd.
+                            DoraAI Builder
                             <br />
-                            Providing reliable tech since 1992
+                            Powering intelligent web creation since 2024
                         </p>
                     </aside>
                     <div>
                         <nav className="flex flex-col">
                             <h6 className="footer-title text-white text-2xl">Services</h6>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Branding</a>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Design</a>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Marketing</a>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Advertisement</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">AI Design</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Responsive Layouts</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">E-commerce Solutions</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">SEO Optimization</a>
                         </nav>
                         <nav className="flex flex-col">
                             <h6 className="footer-title text-white text-2xl">Company</h6>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">About us</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">About Us</a>
                             <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Contact</a>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Jobs</a>
-                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Press kit</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Careers</a>
+                            <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Blog</a>
                         </nav>
                     </div>
                     <nav>
                         <h6 className="footer-title text-white text-2xl">Legal</h6>
-                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Terms of use</a>
-                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Privacy policy</a>
-                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Cookie policy</a>
+                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Terms of Service</a>
+                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <a className="link link-hover py-2 text-lg hover:text-white transition-colors duration-300">Cookie Policy</a>
                     </nav>
                 </footer>
             </div>

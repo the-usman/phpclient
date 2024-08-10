@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@react-three/fiber": "^8.17.5",
     "@tabler/icons-react": "^3.11.0",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
+    "@types/three": "^0.167.1",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
-    "framer-motion": "^11.3.19",
+    "framer-motion": "^11.3.24",
     "gsap": "^3.12.5",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
@@ -27,6 +32,7 @@
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.5",
     "tailwind-merge": "^2.4.0",
+    "three": "^0.167.1",
     "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
