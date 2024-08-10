@@ -17,8 +17,8 @@ export default function Home() {
   
   return (
     <main className="">
-
-      <Navbar />
+      hrrtytyg
+      {/* <Navbar /> */}
       {/* <HeroSection /> */}
       {/* <CardSlider /> */}
       {/* <Features />
