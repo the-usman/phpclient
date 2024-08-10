@@ -69,7 +69,6 @@ const HeroSection = () => {
                     </video>
                 </div>
             </div>
-            <Meteors />
         </div>
     );
 }

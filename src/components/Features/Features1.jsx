@@ -7,7 +7,7 @@ import Section3 from './Section3'
 
 const Features1 = () => {
     return (
-        <div>
+        <div className='bg-[#030014] relative' >
             <Section1 />
             <Section2 />
             <Section3 />

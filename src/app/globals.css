@@ -6,6 +6,11 @@
 @tailwind utilities;
 
 
+/* .card1 {
+  transform: rotate(45deg);
+} */
+
+
 
 .active {
   background: #F2E8F2;
