@@ -17,8 +17,8 @@ export default function Home() {
   
   return (
     <main className="">
-      hrrtytyg
-      {/* <Navbar /> */}
+
+      <Navbar />
       {/* <HeroSection /> */}
       {/* <CardSlider /> */}
       {/* <Features />
@@ -27,10 +27,10 @@ export default function Home() {
       
        */}
       {/* <SliderComponent /> */}
-      {/* <HeroSection1 /> */}
-      {/* <Features1 /> */}
-      {/* <FAQ /> */}
-      {/* <About /> */}
+      <HeroSection1 />
+      <Features1 />
+      <FAQ />
+      <About />
     </main>
   );
 }
