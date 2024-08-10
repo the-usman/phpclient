@@ -30,7 +30,7 @@ export default function Home() {
       <HeroSection1 />
       {/* <Features1 /> */}
       {/* <FAQ /> */}
-      <About />
+      {/* <About /> */}
     </main>
   );
 }
