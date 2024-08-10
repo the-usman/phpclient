@@ -76,7 +76,7 @@ const Section2 = () => {
                                     <h1 className='text-3xl ml-10 text-white content font-extrabold'>Effortless Setup & Content Input</h1>
                                 </div>
                                 <p className='w-[500px] ml-20 text-xl text-white'>
-                                    Define your website's goals, input your content, and let our AI web builder handle the rest with smart templates that match your vision.
+                                    Define your websites goals, input your content, and let our AI web builder handle the rest with smart templates that match your vision.
                                 </p>
                                 <div className="videoDiv">
                                     <video loop autoPlay muted className="w-[400px] h-[400px] ml-[100px]">
