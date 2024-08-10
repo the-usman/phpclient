@@ -29,7 +29,7 @@ export default function Home() {
       {/* <SliderComponent /> */}
       <HeroSection1 />
       {/* <Features1 /> */}
-      <FAQ />
+      {/* <FAQ /> */}
       <About />
     </main>
   );
