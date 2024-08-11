@@ -291,6 +291,13 @@ body {
   background-size: cover;
 }
 
+.stickyContainer {
+  -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar in Firefox */
+  overflow-y: scroll; /* Ensure scrolling is still functional */
+}
+
+
 
 
 
