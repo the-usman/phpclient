@@ -11,7 +11,7 @@ const Features1 = () => {
     return (
         <div className='bg-[#030014] relative' >
             <Section1 />
-            <Section2 />
+            {/* <Section2 /> */}
             <Section3 />
             <Section5 />
             {/* <Features /> */}
