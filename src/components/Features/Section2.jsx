@@ -30,7 +30,7 @@ const Section2 = () => {
                 end: "+=4000",
                 scrub: true,
                 onUpdate: self => {
-                    const progress = self.progress * 8;
+                    const progress = self.progress * 10;
                     const windowHeight = window.innerHeight;
                     const desiredOffset = 200;
                     const height = Math.round(progress * (windowHeight - desiredOffset)) + desiredOffset;
