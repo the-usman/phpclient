@@ -108,7 +108,7 @@ export const SkeletonOne = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src="/image01.png"
+            src="/image01.PNG"
             alt="header"
             width={800}
             height={800}
@@ -135,7 +135,7 @@ export const SkeletonThree = () => {
           {/* TODO */}
           <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
           <Image
-            src="/image09.png"
+            src="/image09.PNG"
             alt="header"
             width={800}
             height={800}
@@ -149,13 +149,13 @@ export const SkeletonThree = () => {
 
 export const SkeletonTwo = () => {
   const images = [
-    "/image02.png",
-    "/image03.png",
-    "/image04.png",
-    "/image05.png",
-    "/image06.png",
-    "/image07.png",
-    "/image08.png",
+    "/image02.PNG",
+    "/image03.PNG",
+    "/image04.PNG",
+    "/image05.PNG",
+    "/image06.PNG",
+    "/image07.PNG",
+    "/image08.PNG",
   ];
 
   const imageVariants = {
@@ -243,7 +243,7 @@ export const Globe = ({ className }) => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src="/image04.png"
+            src="/image04.PNG"
             alt="header"
             width={800}
             height={800}

@@ -1,69 +1,108 @@
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from 'gsap';
+import { cn } from "@/lib/utils";
+import {
+    IconAdjustmentsBolt,
+    IconCloud,
+    IconCurrencyDollar,
+    IconEaseInOut,
+    IconHeart,
+    IconHelp,
+    IconRouteAltLeft,
+    IconTerminal2,
+} from "@tabler/icons-react";
 
-export default function IconCloudDemo() {
-    const items = [
-        { heading: "AI-Powered Design", description: "Automated design recommendations to build stunning websites." },
-        { heading: "Smart Customization", description: "Tailor your website with intelligent customization options." },
-        { heading: "Instant Previews", description: "See real-time updates as you design your site." },
-        { heading: "Seamless Integration", description: "Easily integrate with various tools and platforms." },
+export default function Section1() {
+    const features = [
+        {
+            title: "AI-Powered Design",
+            description:
+                "Automatically generate stunning website designs tailored to your brand's identity.",
+            icon: <IconTerminal2 />,
+        },
+        {
+            title: "User-Friendly Interface",
+            description:
+                "Building your website is as intuitive as drag-and-drop, no coding required.",
+            icon: <IconEaseInOut />,
+        },
+        {
+            title: "Flexible Pricing",
+            description:
+                "Choose a plan that fits your needs. No hidden fees, and no long-term commitments.",
+            icon: <IconCurrencyDollar />,
+        },
+        {
+            title: "Reliable Performance",
+            description: "Enjoy fast loading times and 99.9% uptime for a smooth user experience.",
+            icon: <IconCloud />,
+        },
+        {
+            title: "Scalable Solutions",
+            description: "Easily upgrade your website as your business grows without any hassle.",
+            icon: <IconRouteAltLeft />,
+        },
+        {
+            title: "24/7 Support",
+            description:
+                "Get instant help from our AI-driven support or connect with a human expert.",
+            icon: <IconHelp />,
+        },
+        {
+            title: "Money-Back Guarantee",
+            description:
+                "Try our service risk-free. If you're not satisfied, get a full refund within 30 days.",
+            icon: <IconAdjustmentsBolt />,
+        },
+        {
+            title: "And More...",
+            description: "Explore countless other features designed to make your website stand out.",
+            icon: <IconHeart />,
+        },
     ];
-    const rotationAngle = [0, 12, 12, 0];
-
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.section1',
-                start: 'top top',
-                end: '+=2000px', // Adjust this to control how much scroll affects the animation duration
-                scrub: true,
-                pin: true,
-                markers: true, // Keep this true for debugging, remove it later
-            }
-        });
-
-        items.forEach((_, index) => {
-            timeline.to(`#card_${index}`, {
-                rotate: index % 2 === 0 ? -rotationAngle[index] * 30 : rotationAngle[index] * 30, 
-                x: index % 2 === 0 ? '-1000px' : '1000px',
-                duration: 1,
-                ease: 'power4.inOut',
-            }, index * 0.5); 
-        });
-    }, []);
 
     return (
-        <div className="flex flex-col items-center h-[100vh] overflow-hidden relative bg-[#030014] pt-10 section1">
-            <h1 className="text-6xl mt-20 text-white">
+        <div className="py-10 max-w-7xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#8F4F96]">
                 Key Features
-            </h1>
-            <div className="cardContainer relative w-[620px] h-[510px] mt-20">
-                {items.map((item, index) => {
-                    const rotationAng = rotationAngle[index];
-
-                    return (
-                        <div
-                            key={index}
-                            className="card absolute overflow-hidden rounded-3xl flex flex-col items-center justify-center text-white p-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border-white border"
-                            id={`card_${index}`}
-                            style={{
-                                transform: `rotate(${index % 2 === 0 ? -rotationAng : rotationAng}deg)`,
-                                zIndex: items.length - index,
-                                top: `0px`,
-                                width: '500px',
-                                height: '370px',
-                                background: `linear-gradient(135deg, rgba(58, 123, 213, 0.9), rgba(246, 83, 151, 0.9))`,
-                            }}
-                        >
-                            <h2 className="text-4xl font-bold">{item.heading}</h2>
-                            <p className="mt-2 text-xl">{item.description}</p>
-                        </div>
-                    );
-                })}
+            </h2>
+            <p className="text-lg text-neutral-600 dark:text-neutral-300 mt-2 mb-10">
+                Discover the powerful tools and features that make building your website effortless.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10">
+                {features.map((feature, index) => (
+                    <Feature key={feature.title} {...feature} index={index} />
+                ))}
             </div>
         </div>
     );
 }
+
+const Feature = ({ title, description, icon, index }) => {
+    return (
+        <div
+            className={cn(
+                "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
+                (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
+                index < 4 && "lg:border-b dark:border-neutral-800"
+            )}
+        >
+            {index < 4 && (
+                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+            )}
+            {index >= 4 && (
+                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+            )}
+            <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+                {icon}
+            </div>
+            <div className="text-lg font-bold mb-2 relative z-10 px-10">
+                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+                    {title}
+                </span>
+            </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+                {description}
+            </p>
+        </div>
+    );
+};
